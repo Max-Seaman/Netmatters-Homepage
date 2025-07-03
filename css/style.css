@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-a {
+footer a {
   text-decoration: none;
-  color: #fff;
   padding: 2px 0;
 }
-a:hover {
+footer a:hover {
   text-decoration: underline;
 }
 
@@ -19,9 +18,138 @@ h4 {
 }
 
 a, ul, li, h4 {
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #fff;
+}
+
+.news-txt {
+  font-weight: 400;
+  color: #000;
+  font-size: 1rem;
+}
+
+span {
+  font-size: 1.1rem;
+  padding: 15px;
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+span .btn-1 {
+  background-color: #4081d6;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  margin-top: 20px;
+}
+
+.header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 20px;
+}
+.header-top img {
+  width: 400px;
+  height: auto;
+}
+.header-top .search {
+  display: flex;
+  flex: 1;
+  margin-left: 20px;
+  order: 1;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background-color: #e6e6e6;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header-top .search input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+.header-top .search .submit {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-left: 10px;
+}
+.header-top .search .submit svg {
+  width: 24px;
+  height: 24px;
+  fill: #000;
+}
+
+main {
+  margin: 0 auto;
+}
+
+.icon-star {
+  width: 24px;
+  height: 24px;
+  fill: #ffa600; /* Gold color for the star icon */
+}
+
+.grid {
+  width: 95%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
+}
+.grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  padding: 30px;
+  text-decoration: none;
+}
+
+.card {
+  color: #000;
+  padding: 1.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.card .circle {
+  padding: 15px;
+  border-radius: 50%;
+}
+.card .circle .icon {
+  fill: #fff;
+  width: 35px;
+  height: 35px;
+}
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.card p {
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 footer {
@@ -30,7 +158,6 @@ footer {
   padding: 30px 0 0;
   position: relative;
   width: 100vw;
-  font-family: "poppins", sans-serif;
 }
 footer .footer-top {
   padding-left: 20px;
@@ -75,36 +202,28 @@ footer .footer-row .footer-menu h4 {
   background-color: #212330;
   color: #fff;
   width: 100vw;
-  font-family: "poppins", sans-serif;
 }
 .footer-bottom p {
   padding: 0 20px;
   font-size: 12px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-body, main {
-  margin: 0;
-  padding: 0;
-}
-
 .social-icons {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  max-width: 240px;
 }
 .social-icons button {
   background: #212330;
   border: none;
   cursor: pointer;
-  margin: 0 5px 15px 5px;
+  margin: 0 5px 10px 5px;
   padding: 0.8rem 1.2rem;
+  flex-basis: calc(50% - 10px);
 }
 .social-icons button svg {
   width: 30px;
@@ -124,6 +243,59 @@ body, main {
 }
 .icon-footer-x:hover {
   background-color: #0fb9f7;
+}
+
+.support, .contact {
+  display: none;
+  flex-wrap: wrap;
+}
+
+.header-top button {
+  border: none;
+}
+.header-top button svg {
+  width: 32px;
+  height: 32px;
+  fill: #000;
+}
+
+.phone {
+  background: none;
+}
+
+.menu {
+  background-color: #212330;
+}
+.menu-icon {
+  filter: brightness(0) invert(1);
+}
+
+.card-1 .btn, .circle-1 {
+  background-color: #67809e;
+}
+
+.card-2 .btn, .circle-2 {
+  background-color: #4081d6;
+}
+
+.card-3 .btn, .circle-3 {
+  background-color: #2fcc70;
+}
+
+.card-4 .btn, .circle-4 {
+  background-color: #d64540;
+}
+
+.card-5 .btn, .circle-5 {
+  background-color: #926fb0;
+}
+
+.card-6 .btn, .circle-6 {
+  background-color: #f52559;
+}
+
+.card-7 .btn, .circle-7 {
+  background-color: #3a86ff;
 }
 
 /*# sourceMappingURL=style.css.map */

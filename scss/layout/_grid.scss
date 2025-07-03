@@ -1,0 +1,54 @@
+
+.grid {
+    width: 95%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 20px;
+
+    a {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: auto;
+        padding: 30px;
+        text-decoration: none;
+    }
+}
+
+.card {
+    color: #000;
+    padding: 1.5em 1em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    letter-spacing: 0.4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    .circle {
+        padding: 15px;
+        border-radius: 50%; 
+    
+        .icon{
+            fill: #fff;
+            width: 35px;
+            height: 35px;
+        }
+
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    
+
+    
+}
