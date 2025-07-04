@@ -55,6 +55,7 @@ body {
   align-items: center;
   width: 100%;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 header {
@@ -103,44 +104,51 @@ main {
 }
 
 .icon-star {
-  width: 24px;
-  height: 24px;
-  fill: #ffa600; /* Gold color for the star icon */
+  font-size: 48px;
+  color: #ffa600;
 }
 
 .grid {
   width: 95%;
-  max-width: 1000px;
+  max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
+  align-items: stretch;
+  grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5" "card-6" "card-7";
 }
 .grid a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: auto;
   padding: 30px;
+  height: 100%;
   text-decoration: none;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   color: #000;
   padding: 1.5em 1em;
   border: 1px solid #ccc;
   border-radius: 10px;
   letter-spacing: 0.4px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.07);
   text-align: center;
 }
 .card .circle {
-  padding: 15px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card .circle .icon {
-  fill: #fff;
-  width: 35px;
-  height: 35px;
+  font-size: 35px;
+  color: #fff;
 }
 .card h2 {
   font-size: 1.3rem;
@@ -152,12 +160,93 @@ main {
   line-height: 1.5;
 }
 
+.about {
+  background-color: #323544;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+}
+.welcome h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.welcome p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
+  max-width: 800px;
+}
+.welcome .buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  border-radius: 4px;
+  gap: 10px;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+.welcome .buttons a {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding: 20px 40px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.welcome .bold {
+  font-weight: 700;
+}
+
+figure {
+  margin: 0;
+}
+figure blockquote {
+  margin: 20px 0;
+  font-style: italic;
+}
+figure blockquote .quote {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.culture {
+  background-color: #272936;
+}
+.culture:hover {
+  background-color: #101218;
+}
+
+.google {
+  background-color: #4081d6;
+}
+.google:hover {
+  background-color: #0464e2;
+}
+
+.trustpilot {
+  background-color: #00b67b;
+}
+.trustpilot:hover {
+  background-color: #018a5e;
+}
+
 footer {
   background-color: #323544;
   color: #fff;
-  padding: 30px 0 0;
   position: relative;
   width: 100vw;
+  padding: 30px 0 0;
 }
 footer .footer-top {
   padding-left: 20px;
@@ -211,8 +300,7 @@ footer .footer-row .footer-menu h4 {
 .social-icons {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
   max-width: 240px;
@@ -222,14 +310,11 @@ footer .footer-row .footer-menu h4 {
   border: none;
   cursor: pointer;
   margin: 0 5px 10px 5px;
-  padding: 0.8rem 1.2rem;
-  flex-basis: calc(50% - 10px);
+  padding: 15px 40px;
 }
-.social-icons button svg {
-  width: 30px;
-  height: 30px;
-  fill: #fff;
-  transition: fill 0.3s;
+.social-icons button .icon {
+  font-size: 30px;
+  color: #fff;
 }
 
 .icon-footer-facebook:hover {
@@ -270,32 +355,68 @@ footer .footer-row .footer-menu h4 {
   filter: brightness(0) invert(1);
 }
 
-.card-1 .btn, .circle-1 {
+.card-1 .btn, .circle-1, .news-1 {
   background-color: #67809e;
 }
 
-.card-2 .btn, .circle-2 {
+.card-2 .btn, .circle-2, .news-2 {
   background-color: #4081d6;
 }
 
-.card-3 .btn, .circle-3 {
+.card-3 .btn, .circle-3, .news-3 {
   background-color: #2fcc70;
 }
 
-.card-4 .btn, .circle-4 {
+.card-4 .btn, .circle-4, .news-4 {
   background-color: #d64540;
 }
 
-.card-5 .btn, .circle-5 {
+.card-5 .btn, .circle-5, .news-5 {
   background-color: #926fb0;
 }
 
-.card-6 .btn, .circle-6 {
+.card-6 .btn, .circle-6, .news-6 {
   background-color: #f52559;
 }
 
-.card-7 .btn, .circle-7 {
-  background-color: #3a86ff;
+.card-7 .btn, .circle-7, .news-7 {
+  background-color: #cf4125;
+}
+
+.card-8 .btn, .circle-8, .news-8 {
+  background-color: #f7b423;
+}
+
+.card-9 .btn, .circle-9, .news-9 {
+  background-color: #00b57c;
+}
+
+.card-1 {
+  grid-area: card-1;
+}
+
+.card-2 {
+  grid-area: card-2;
+}
+
+.card-3 {
+  grid-area: card-3;
+}
+
+.card-4 {
+  grid-area: card-4;
+}
+
+.card-5 {
+  grid-area: card-5;
+}
+
+.card-6 {
+  grid-area: card-6;
+}
+
+.card-7 {
+  grid-area: card-7;
 }
 
 /*# sourceMappingURL=style.css.map */

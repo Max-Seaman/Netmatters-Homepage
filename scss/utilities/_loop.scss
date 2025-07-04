@@ -1,0 +1,33 @@
+$colors: (
+    #67809e,
+    #4081d6,
+    #2fcc70,
+    #d64540,
+    #926fb0,
+    #f52559,
+    #cf4125,
+    #f7b423,
+    #00b57c
+);
+
+@for $i from 1 through length($colors) {
+    .card-#{$i} .btn, .circle-#{$i}, .news-#{$i} {
+        background-color: nth($colors, $i);
+    }
+}
+
+$cards: (
+    card-1,
+    card-2,
+    card-3,
+    card-4,
+    card-5,
+    card-6,
+    card-7
+);
+
+@each $key in $cards {
+    .#{$key} {
+        grid-area: #{$key};
+    }
+}
