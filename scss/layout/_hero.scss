@@ -1,0 +1,26 @@
+.hero {
+  position: relative;
+  display: inline-block;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #000 25%,      /* black overlay on left */
+    transparent 50%, /* fade out */
+    transparent 100% /* no overlay on right side */
+  );
+
+  z-index: 2;
+  mix-blend-mode: multiply; /* used to overlay gradient and image */
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+ 
+}

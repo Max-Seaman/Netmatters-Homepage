@@ -1,0 +1,17 @@
+.news {
+
+    &-txt {
+        width: 100%;
+    }
+
+    &-author {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 40%;
+    }
+}
+
+.avatar {
+    padding: 20px;
+}

@@ -6,15 +6,57 @@ $colors: (
     #926fb0,
     #f52559,
     #cf4125,
-    #f7b423,
-    #00b57c
+    
 );
 
 @for $i from 1 through length($colors) {
-    .card-#{$i} .btn, .circle-#{$i}, .news-#{$i} {
+    .card-#{$i}:hover {
         background-color: nth($colors, $i);
+        top: -10px;
+        transition: 0.5s ease;
+        color: #fff;
+    
+        .circle-#{$i} {
+            background-color: #fff;
+            
+            i {
+                color: nth($colors, $i);
+            }
+        }
+
+        .btn-#{$i} {
+            color: nth($colors, $i);
+            background-color: #fff;
+        }
+    }
+
+    .navbar-#{$i}:hover {
+        background-color: nth($colors, $i);
+
+        i {
+            color: #fff;
+        }
+    }
+
+    @include color-variant('.btn',$i);
+    @include color-variant('.circle',$i);
+    
+    .dropdown-#{$i} {
+        background-color: darken(nth($colors, $i), 10%);
+    }
+
+    .navicon-#{$i} {
+        color: nth($colors, $i);
+
+    }
+
+    .dropdown-#{$i}::before {
+        border-color: transparent transparent nth($colors, $i) transparent;
+        top: -68%;
+        left: calc(calc(50vw - 575px) + (140px * #{$i}));  
     }
 }
+
 
 $cards: (
     card-1,

@@ -31,3 +31,27 @@ a, ul , li, h4 {
     font-size: 1rem;
 }
 
+.view {
+    order: 1;
+    text-decoration: none;
+    padding: 30px;
+    color: #333645;
+    font-weight: 600;
+    font-size: 27px;
+ 
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+#service {
+    font-weight: 400;
+    font-size: 43px;
+}
+
+small {
+    display: block;
+    font-size: 10px;
+    padding-top: 10px;
+}

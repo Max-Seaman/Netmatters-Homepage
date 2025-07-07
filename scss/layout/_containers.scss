@@ -1,10 +1,14 @@
-body {
-    margin: 0;
+html, body {
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    letter-spacing: 0.4px;;
 }
 
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
 }
 
 
@@ -16,4 +20,25 @@ body {
     width: 100%;
     margin: 0 auto;
     padding:0 15px;
+
+     &-dropdown {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+        text-transform: none;
+
+        h1 {
+            text-align: left;
+            color: white;
+            font-size: 32px;
+            font-weight: 500;
+            grid-column: 1 / -1;
+        }
+   }
 }
+
+.stars {
+    margin: 10px 0;
+}
+
+

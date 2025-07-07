@@ -57,6 +57,9 @@
 .icon-star:before {
   content: "\e9d9";
 }
+.icon-arrow:before {
+  content: "\ea3c";
+}
 .icon-web:before {
   content: "\ea80";
 }
@@ -129,7 +132,7 @@
 .icon-cloud:before {
   content: "\e926";
 }
-.icon-help-with-circle:before {
+.icon-question:before {
   content: "\e901";
 }
 .icon-cloudsmall:before {

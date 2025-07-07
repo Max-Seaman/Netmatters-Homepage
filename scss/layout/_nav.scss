@@ -1,0 +1,142 @@
+nav {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #333645;
+    text-transform: uppercase;
+
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        line-height: 1;
+    }
+}
+        
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+    position: static;
+
+    &::after {
+        position: relative;
+    }
+
+    i {
+        font-size: 24px;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-size: 18px;
+        width: 140px;
+        align-items: center;
+        
+    }
+
+    /*&:hover::after {
+        content: '';
+        position: relative;
+        top: 8%;     //25% for larger viewport
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 0 70px 30px 70px;
+        border-color: transparent transparent #333645 transparent;
+        z-index: 2;
+    }*/
+}
+
+
+
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 20px 10px;
+    
+    a {
+        color: white;
+        padding: 10px 0;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+
+        span {
+            padding: 10px;
+        }
+
+
+        span:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Show dropdown on hover */
+.navbar:hover .dropdown {
+    display: grid;
+}
+
+.dropdown::before {
+    content: '';
+    position: relative;
+    //top: 8%;     //25% for larger viewport
+    //left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 70px 30px 70px;
+    border-color: transparent transparent #333645 transparent;
+    z-index: 2;
+}
+
+.dropdown {
+    position: absolute;
+    top: 190px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 20px 10px;
+
+    a {
+        color: white;
+        padding: 10px 0;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+
+        span {
+            padding: 10px;
+        }
+    }
+
+    span:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Show dropdown on hover */
+
+
+.dropdown-2, .dropdown-3, .dropdown-4, .dropdown-5, .dropdown-6, .dropdown-7 {
+    display: none;
+}
