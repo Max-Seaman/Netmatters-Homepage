@@ -38,8 +38,8 @@ $colors: (
         }
     }
 
-    @include color-variant('.btn',$i);
-    @include color-variant('.circle',$i);
+    @include color-variant('.btn', $i);
+    @include color-variant('.circle', $i);
     
     .dropdown-#{$i} {
         background-color: darken(nth($colors, $i), 10%);

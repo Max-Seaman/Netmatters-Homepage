@@ -36,31 +36,4 @@
     }
 }
 
-.support, .contact {
-    display: none;
-    flex-wrap: wrap;
-}
 
-.header-top {
-    button {
-        border: none;
-
-        svg{
-            width: 32px;
-            height: 32px;
-            fill: #000; // Change to your desired color 
-        }
-    }  
-}
-
-.phone {
-    background: none;
-}
-
-.menu {
-    background-color: #212330;
-
-    &-icon {
-        filter: brightness(0) invert(1);
-    }
-}

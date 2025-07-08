@@ -24,7 +24,8 @@ html, body {
      &-dropdown {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        width: 80%;
+        max-width: 1000px !important;   //make sure to change for the largest viewport
+        align-items: center;
         text-transform: none;
 
         h1 {
@@ -34,6 +35,10 @@ html, body {
             font-weight: 500;
             grid-column: 1 / -1;
         }
+   }
+
+   &-news {
+    padding: 0;
    }
 }
 

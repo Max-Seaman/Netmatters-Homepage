@@ -14,16 +14,22 @@
     <body>
         
         <header class="container">
-            <div class="header-top">
+            <div class="header-top ">
                 <img src="img/logo.png" alt="Netmatters Logo">
-                <button type="button" class="support"><i class="icon icon-mouse"></i>Support</button>
-                <button type="button" class="contact"><i class="icon icon-plane"></i>Contact</button>
-                <form class="search">
+                <div class="items">
+                    <button type="button" class="support btn btn-2"><i class="icon icon-mouse"></i>Support</button>
+                    <button type="button" class="contact btn"><i class="icon icon-plane"></i>Contact</button>
+                    <form class="search search-1">
+                        <input type="text" class="hidden-m" placeholder="Search...">
+                        <button type="submit"><i class="icon icon-search"></i></button>
+                    </form>
+                    <button type="button" class="phone"><i class="icon icon-phonetalk"></i></button>
+                    <button type="button" class="menu"><i class="icon icon-menu1"></i></button>
+                </div>
+                <form class="search search-2">
                     <input type="text" placeholder="Search...">
-                    <button type="submit"class="submit"><i class="icon icon-search"></i></button>
+                    <button type="submit"><i class="icon icon-search"></i></button>
                 </form>
-                <button type="button" class="phone"><i class="icon icon-phonetalk"></i></button>
-                <button type="button" class="menu"><i class="icon icon-menu"></i></button>
             </div>
             <nav>
                 <ul>
@@ -136,9 +142,16 @@
 
         <main>
 
+        <div class="container">
             <div class="hero">
                 <img src="img/hero.png" alt="Netmatters Building"> 
+                <div class="hero-txt">
+                    <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
+                    <h2>Performance-driven digital and technology services with complete transparency</h2>
+                    <span class="btn btn-5 hero-btn">Why Choose Us? <i class="icon icon-arrow"></i></span>
+                </div>
             </div>
+        </div>
 
             <div class="container">   
                 <h1 id="service">Our Services</h1>
@@ -212,10 +225,10 @@
                         </div>
                         <figure>
                             <blockquote>
-                                <p class="quote bold">Netmatters stood out from the start. Great guys and very easy to work with. Both the build and digital marketing teams are clearly skilled -they know their stuff! They delivered a website to our (high!) expectations and went over and above to ensure we were satisfied clients - and we are!</p>
+                                <p class="quote">Netmatters stood out from the start. Great guys and very easy to work with. Both the build and digital marketing teams are clearly skilled -they know their stuff! They delivered a website to our (high!) expectations and went over and above to ensure we were satisfied clients - and we are!</p>
                             </blockquote>
                             <figcaption>
-                                <p><strong>Eleanor Bishop, Head of Marketing - </strong>Ashcroft Partnership LLP</p>
+                                <strong>Eleanor Bishop, Head of Marketing - </strong>Ashcroft Partnership LLP
                             </figcaption>
                         </figure>
                         <div class="buttons">
@@ -231,48 +244,57 @@
                 <a href="#" class="view">View All <i class="icon icon-arrow"></i></a>
                 <div class="container container-news">
                     <a href="#" class="news-txt">
-                        <h3>How Much Could Bespoke Software Add to Your E...</h3>
-                        <p>If you're a Managing Director or Senior Manager preparing your business for exit, you know that incr...</p>
-                        <span class="btn btn-news">Read More</span>
-                        <div class="news-author">
-                            <div class="avatar">
-                                <img src="img/news-netmatters.png" alt="Author Image">
-                            </div>
-                            <div class="details">
-                                <p>Posted by Netmatters</p>
-                                <p>27th June 2025</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="container container-news">
-                    <a href="#" class="news-txt">
-                        <h3>New Office Opening in Cambridge</h3>
-                        <p>We are excited to announce the opening of our new office in Cambridge, expanding our reach and capabilities.</p>
-                        <span class="btn btn-news">Read More</span>
-                        <div class="news-author">
-                            <div class="avatar">
-                                <img src="img/news-netmatters.png" alt="Author Image">
-                            </div>
-                            <div class="details">
-                                <p>Posted by Netmatters</p>
-                                <p>26th June 2025</p>
+                        <img src="img/news-value.png" alt="Increase exit value with bespoke software">
+                        <div class="content insights">
+                            <h3>How Much Could Bespoke Software Add to Your E...</h3>
+                            <p>If you're a Managing Director or Senior Manager preparing your business for exit, you know that incr...</p>
+                            <span class="btn btn-news">Read More</span>
+                            <div class="news-author">
+                                <div class="avatar">
+                                    <img src="img/news-netmatters.png" alt="Author Image">
+                                </div>
+                                <div class="details">
+                                    <p class="bold">Posted by Netmatters</p>
+                                    <p>27th June 2025</p>
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="container container-news">
                     <a href="#" class="news-txt">
-                        <h3>Netmatters Celebrates 10 Years of Excellence</h3>
-                        <p>This year marks a decade of innovation and success for Netmatters, and we couldn't have done it without our amazing team and clients.</p>
-                        <span class="btn btn-news">Read More</span>
-                        <div class="news-author">
-                            <div class="avatar">
-                                <img src="img/news-BS.png" alt="Author Image">
+                        <img src="img/news-ai.png" alt="Article: AI integration for business">
+                        <div class="content insights">
+                            <h3>New Office Opening in Cambridge</h3>
+                            <p>We are excited to announce the opening of our new office in Cambridge, expanding our reach and capabilities.</p>
+                            <span class="btn btn-news">Read More</span>
+                            <div class="news-author">
+                                <div class="avatar">
+                                    <img src="img/news-netmatters.png" alt="Author Image">
+                                </div>
+                                <div class="details">
+                                    <p class="bold">Posted by Netmatters</p>
+                                    <p>26th June 2025</p>
+                                </div>
                             </div>
-                            <div class="details">
-                                <p>Posted by Netmatters</p>
-                                <p>27th June 2025</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="container container-news">
+                    <a href="#" class="news-txt">
+                        <img src="img/news-hire.png" alt="Netmatters hiring 1st line technician">
+                        <div class="content careers">
+                            <h3>Netmatters Celebrates 10 Years of Excellence</h3>
+                            <p>This year marks a decade of innovation and success for Netmatters, and we couldn't have done it without our amazing team and clients.</p>
+                            <span class="btn btn-news">Read More</span>
+                            <div class="news-author">
+                                <div class="avatar">
+                                    <img src="img/news-BS.png" alt="Author Image">
+                                </div>
+                                <div class="details">
+                                    <p class="bold">Posted by Netmatters</p>
+                                    <p>27th June 2025</p>
+                                </div>
                             </div>
                         </div>
                     </a>
