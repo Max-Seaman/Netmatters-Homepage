@@ -1,17 +1,30 @@
 .grid {
+    max-width: 718px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    row-gap: 20px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 30px;
     align-items: stretch;
-    grid-template-areas: 
-    "card-1"
-    "card-2"
-    "card-3"
-    "card-4"
-    "card-5"
-    "card-6"
-    "card-7";
+   
+    @media (min-width: 768px) { 
+        .card-4, .card-5, .card-6, .card-7 {
+            grid-column: span 6;
+        }
+    }
+
+    @media (min-width: 992px) {
+        max-width: 942px;
+        .card-1, .card-2, .card-3 {
+            grid-column: span 4;
+        }
+    }
+
+    @media (min-width: 1260px) {
+        max-width: 1210px;
+        .card-4, .card-5, .card-6, .card-7 {
+            grid-column: span 3;
+        }
+    }
 
     a {
         display:flex;
@@ -60,7 +73,7 @@
     p {
         font-size: 0.8rem;
         line-height: 1.5;
-    }  
+    } 
 }
 
 h1 {

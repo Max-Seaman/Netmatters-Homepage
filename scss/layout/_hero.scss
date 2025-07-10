@@ -1,16 +1,18 @@
-/* .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to right,
-      #000 20%,       black overlay on left 
-      transparent 50%,  fade out 
-      transparent 100%    no overlay on right side 
-    );
-    z-index: 2;
-    mix-blend-mode: multiply;    used to overlay gradient and image 
-  } */
+@media (min-width: 992px) {
+  .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        #000 20%,       
+        transparent 50%,  
+        transparent 100%    
+      );
+      z-index: 2;
+      mix-blend-mode: multiply;    //used to overlay gradient and image 
+    } 
+}
 
 .hero {
     position: relative;
@@ -29,33 +31,58 @@
     height: 100%;
     object-fit: cover;
     filter: brightness(50%);
+
+    @media (min-width: 992px) {
+      filter: none;
+    }
   }
 
 .hero-txt {
+  display: flex;
   position: relative;
   color: #fff;
   text-align: center;
   z-index: 2;
-  margin-top: 0;
-  padding: 0 35px;
   line-height: 1.2;
+
+  @media (min-width: 992px) {
+    text-align: left;
+    align-items: flex-start;
+  }
   
 
   h1 {
     color: #fff;
     font-size: 40px;
     font-weight: 600;
+
+    @media (min-width: 992px) {
+      font-size: 64px;
+      margin: 10px 0;
+    }
+
+    
   }
 
   h2 {
     padding-bottom: 30px;
     font-size: 20px;
     font-weight: 600;
+
+    @media (min-width: 992px) {
+      font-size: 26px;
+      width: 750px;
+    }
   }
 }
 
 .hero-btn {
   font-size: 20px;
+  padding: 20px;
+
+    &:hover {
+      background-color: #805f9e;
+    }
 }
 
 

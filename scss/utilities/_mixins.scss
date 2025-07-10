@@ -1,5 +1,5 @@
 @mixin color-variant($selector, $i) {
   #{$selector}-#{$i} {
-    background-color: nth($colors, $i);
+    background-color: nth($colors-logo, $i);
   }
 }

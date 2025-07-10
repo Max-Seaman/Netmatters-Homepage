@@ -1,17 +1,16 @@
-$colors: (
+$colors-logo: (
     #67809e,
     #4081d6,
     #2fcc70,
     #d64540,
     #926fb0,
     #f52559,
-    #cf4125,
-    
+    #cf4125,  
 );
 
-@for $i from 1 through length($colors) {
+@for $i from 1 through length($colors-logo) {
     .card-#{$i}:hover {
-        background-color: nth($colors, $i);
+        background-color: nth($colors-logo, $i);
         top: -10px;
         transition: 0.5s ease;
         color: #fff;
@@ -20,18 +19,18 @@ $colors: (
             background-color: #fff;
             
             i {
-                color: nth($colors, $i);
+                color: nth($colors-logo, $i);
             }
         }
 
         .btn-#{$i} {
-            color: nth($colors, $i);
+            color: nth($colors-logo, $i);
             background-color: #fff;
         }
     }
 
     .navbar-#{$i}:hover {
-        background-color: nth($colors, $i);
+        background-color: nth($colors-logo, $i);
 
         i {
             color: #fff;
@@ -42,18 +41,22 @@ $colors: (
     @include color-variant('.circle', $i);
     
     .dropdown-#{$i} {
-        background-color: darken(nth($colors, $i), 10%);
+        background-color: darken(nth($colors-logo, $i), 10%);
     }
 
     .navicon-#{$i} {
-        color: nth($colors, $i);
+        color: nth($colors-logo, $i);
 
     }
 
     .dropdown-#{$i}::before {
-        border-color: transparent transparent nth($colors, $i) transparent;
+        border-color: transparent transparent nth($colors-logo, $i) transparent;
         top: -68%;
-        left: calc(calc(50vw - 575px) + (140px * #{$i}));  
+        left: calc(calc(50vw - 575px) + (140px * #{$i})); 
+        
+        @media (min-width: 1260px) {
+            left: calc(calc(50vw - 730px) + (178.5px * #{$i}));
+        }
     }
 }
 
@@ -70,6 +73,6 @@ $cards: (
 
 @each $key in $cards {
     .#{$key} {
-        grid-area: #{$key};
+        grid-column: span 12;
     }
 }

@@ -5,21 +5,17 @@ nav {
     background-color: #333645;
     text-transform: uppercase;
 
-    ul {
+    @media (min-width:992px) {
         display: flex;
-        list-style: none;
-        padding: 0;
-        line-height: 1;
     }
 }
         
 
 .navbar {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     padding: 10px 0;
     position: static;
+    width: calc(100% / 7);
+    height: 100%;
 
     &::after {
         position: relative;
@@ -38,7 +34,6 @@ nav {
         padding: 10px 15px;
         border-radius: 4px;
         font-size: 18px;
-        width: 140px;
         align-items: center;
         
     }
@@ -62,18 +57,25 @@ nav {
     height: 0px;
     border-style: solid;
     border-width: 0 70px 30px 70px;
-    border-color: transparent transparent #333645 transparent;
     z-index: 3;
+
+    @media (min-width: 1260px) {
+        border-width: 0 89.25px 30px 89.25px;
+    }
 }
 
 .dropdown {
     display: none;
     position: absolute;
-    top: 215px;
+    top: 220px;
     left: 0;
     z-index: 3;
     width: 100%;
     padding: 20px 10px;
+
+    @media (min-width: 1260px) {
+        top: 210px;
+    }
 
     a {
         align-items: center;
@@ -83,6 +85,10 @@ nav {
         display: flex;
         flex-direction: row;
         width: 300px;
+
+        @media (min-width: 1260px) {
+            width: 400px;
+        }
 
         span {
             padding: 10px;
