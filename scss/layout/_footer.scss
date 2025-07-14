@@ -1,15 +1,14 @@
 footer {
     padding: 30px 0 0;
-    width: 100%;
+    @include size(100%, auto);
 
-    @media (min-width: 1260px) {
+    @include mq(lg) {
         display: flex;
         column-gap: 60px;
     }
 
-    .footer-top {
-        padding-left: 20px;
-        margin-top: 10px;
+    .footer__top {
+        @include spacing(0 0 0 20px, 10px 0 0);
 
         img {
             filter: brightness(0) invert(1);
@@ -17,28 +16,27 @@ footer {
         }
     }
 
-    .footer-row {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
+    .footer__row {
+        @include flex(null, null, null, wrap);
+        @include size(100%, auto);
         font-size: 14px;
         line-height: 1.57;
         padding: 0 0 30px 20px;
 
-        .footer-menu {
+        .footer__menu {
             flex: 100%;
             margin-bottom: 5px;
             font-weight: 200;
 
-            @media (min-width: 768px) {
+            @include mq(sm) {
                 flex: 50%;
             }
 
-            @media (min-width: 992px) {
+            @include mq(md) {
                 flex: 25%;
             }
 
-            @media (min-width: 1260px) {
+            @include mq(lg) {
                 margin-bottom: 40px;
             }
 
@@ -50,13 +48,39 @@ footer {
     }
 }
 
-.footer-bottom {
-    background-color: #212330;
-    width: 100%;
-    
-    p {
-        align-self: flex-start;
-        padding: 5px;
-        font-size: 12px;
+.footer__bottom p {
+    align-self: flex-start;
+    padding: 5px;
+    font-size: 12px;
+    color: $white;
+}
+
+.footer__fixed {
+    position: fixed;
+    @include flex(row, null, space-between);
+    @include size(100%);
+    bottom: 0;
+    z-index: 10;
+    background-color: transparent;
+
+    a {
+        @include spacing(0 5px, auto 0 0 0);
+        background-color: $button--grey;
+        border-radius: 0 8px;
+
+        &:hover {
+            background-color: $button--grey__dark;
+        }
+    }
+}
+
+.circle__fixed {
+    background-color: $primary--background--darker;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+
+    &:active {
+        transform: scale(0.9);
     }
 }

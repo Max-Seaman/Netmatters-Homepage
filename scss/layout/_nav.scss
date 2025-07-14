@@ -1,48 +1,30 @@
 nav {
     display: none;  //change to flex when necessary
-    justify-content: center;
     width: 100vw;
-    background-color: #333645;
+    background-color: $primary--background;
     text-transform: uppercase;
 
-    @media (min-width:992px) {
+    @include mq(md) {
         display: flex;
     }
 }
         
 
 .navbar {
+    @include size(calc(100% / 7), 100%);
     padding: 10px 0;
-    position: static;
-    width: calc(100% / 7);
-    height: 100%;
-
-    &::after {
-        position: relative;
-    }
 
     i {
         font-size: 24px;
     }
 
     a {
-        display: flex;
-        flex-direction: column;
+        @include flex(column, center, null, null);
         text-align: center;
-        color: #fff;
-        text-decoration: none;
         padding: 10px 15px;
-        border-radius: 4px;
         font-size: 18px;
-        align-items: center;
-        
     }
 }
-
-
-
-/* Dropdown Menu */
-
 
 /* Show dropdown on hover */
 .navbar:hover .dropdown {
@@ -53,42 +35,34 @@ nav {
     content: '';
     position: relative;
     transform: translateX(-50%) rotate(180deg);
-    width: 0px;
-    height: 0px;
+    @include size(0, 0);
     border-style: solid;
     border-width: 0 70px 30px 70px;
     z-index: 3;
 
-    @media (min-width: 1260px) {
+    @include mq(lg) {
         border-width: 0 89.25px 30px 89.25px;
     }
 }
 
 .dropdown {
+    @include size(100%, auto);
     display: none;
     position: absolute;
     top: 220px;
     left: 0;
     z-index: 3;
-    width: 100%;
     padding: 20px 10px;
 
-    @media (min-width: 1260px) {
+    @include mq(lg) {
         top: 210px;
     }
 
     a {
-        align-items: center;
-        color: white;
         padding: 10px 0;
-        text-decoration: none;
-        display: flex;
         flex-direction: row;
-        width: 300px;
-
-        @media (min-width: 1260px) {
-            width: 400px;
-        }
+        min-width: 300px;
+        text-align: left;
 
         span {
             padding: 10px;

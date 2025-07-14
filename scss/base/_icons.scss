@@ -1,0 +1,45 @@
+.social-icons{
+    @include flex(null, null, null, wrap);
+    max-width: 240px;
+
+    @include mq(xs) {
+        max-width: 400px;
+    }
+    
+    button {
+        background-color: $primary--background__darker;
+        border: none;
+        cursor: pointer;
+        @include spacing(15px 40px, 0 5px 10px 5px);
+        
+
+        @include mq(xs) {
+            padding: 15px 20px;
+        }
+        
+        .icon {
+            font-size: 30px;
+            color: $white;
+        }
+    }
+}
+
+.icon-footer {
+    &-facebook:hover {
+        background-color: $facebook;
+    }
+    &-linkedin:hover {
+        background-color: $linkedin;
+    }
+    &-instagram:hover {
+        background-color: $instagram;
+    }
+    &-x:hover {
+        background-color: $x;
+    }
+}
+
+.icon-star {
+    font-size: 48px;
+    color: $star;
+}

@@ -1,13 +1,8 @@
-span {
-    font-size: 1.1rem;
-    padding: 15px;
-    color:#fff;
-    border-radius: 3px; 
-    text-align: left;
-}
-
 .btn {
+    @include spacing(15px, auto 0 0 0);
     text-transform: uppercase;
     cursor: pointer;  
-    margin-top: auto;
+    color: $white;
+    border-radius: 3px;
+    font-size: 1.1rem;
  }

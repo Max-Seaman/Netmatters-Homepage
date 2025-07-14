@@ -1,23 +1,18 @@
 .about {
-    background-color: #323544;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
+    background-color: $primary--background;
+    color: $white;
     padding-top: 40px;
 }
 
 .welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    max-width: 720px;
-    @media (min-width: 992px) {
-        width: 455px;
+    @include flex(column);
+    
+    @include mq(md) {
+        @include size(455px);
     }
 
-    @media (min-width: 1260px) {
-        width: 600px;
+    @include mq(lg) {
+        @include size(600px);
     }
 
     h2 {
@@ -33,23 +28,16 @@
     }
 
     .buttons {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include flex(row, null, null, wrap);
         border-radius: 4px;
         gap: 10px;
         margin: 20px 0 40px 0;
         white-space: nowrap;
         
         a  {
-            text-decoration: none;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            padding: 10px 30px;
-            border-radius: 4px;
+            padding: 15px 30px;
             font-size: 20px;
             font-weight: 500;
-            line-height: 35px;
         }
     }
 
@@ -97,25 +85,17 @@ strong {
 }
 
 .culture {
-    background-color: #272936;
+    background-color: $primary--background__dark;
 
     &:hover {
-        background-color: #101218;
-    }
-}
-
-.google {
-    background-color: #4081d6;
-
-    &:hover {
-        background-color: #0464e2;
+        background-color: $primary--background__darkest;
     }
 }
 
 .trustpilot {
-    background-color: #00b67b;
+    background-color: $trustpilot;
 
     &:hover {
-        background-color: #018a5e;
+        background-color: $trustpilot__dark;
     }
 }

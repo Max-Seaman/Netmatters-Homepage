@@ -1,9 +1,4 @@
 .news-txt {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 30px;
-    width: 100%;
     position: relative;
     margin-bottom: 30px;
 }
@@ -14,12 +9,11 @@
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ccc;
+    @include flex(column, null, null, null);
+    border: 1px solid $lightgrey;
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.07);
     padding: 30px;
-    height: 350px;
+    @include size(null, 350px);
 
     h3 {
         margin: 0;
@@ -32,23 +26,20 @@
 
     &-insights{
         h3 {
-            color: #67809e;
+            color: $primary--grey;
         }
     }
 
     &-careers {
         h3 {
-            color: #4081d6;
+            color: $primary--blue;
         }
     }
 }
 
 .news-author {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    border-top: 1px solid #ccc;
+    @include flex(null, center, null, null);
+    border-top: 1px solid $lightgrey;
     padding-top: 20px;
 }
 
@@ -57,53 +48,42 @@
 }
 
 .details p {
-    max-width: 250px;
     margin: 5px;
 }
 
-.btn-news {
+.btn__news {
     width: fit-content;
-    margin-bottom: 20px;
-    padding: 10px 15px;
-
-    &-insights {
-        background-color: #f7b423;
-    }
-
-    &-careers {
-        background-color: #4081d6;
-    }
+    @include spacing(10px 15px, auto 0 20px);
 }
 
 .tag {
     position: absolute;
     right: 0;
     top: 2%;
-    color: #fff;
+    color: $white;
     font-size: .75rem;
     padding: 0 10px;
-    line-height: 1.438rem;
+    line-height: 1.5rem;
     text-transform: uppercase;
     border-radius: 2px 0 0 2px;
-    z-index: 1;
-
+   
     &-insights {
-        background-color: #67809e;
+        background-color: $primary--grey;
     }
 
     &-careers {
-        background-color: #4081d6;
+        background-color: $primary--blue;
     }
 }
 
-@media (min-width: 768px) {
-    .news-hidden {
+@include mq(sm) {
+    .news--hidden {
         display: none;
     }
 }
 
-@media (min-width: 1260px) {
-    .news-hidden {
+@include mq(lg) {
+    .news--hidden {
         display: flex;
     }
 }

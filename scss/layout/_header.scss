@@ -1,57 +1,46 @@
-
-
-.header-top {
-    display: grid;
-    grid-template-columns: minmax(100px, 400px) 1fr;
-    grid-template-rows: auto auto;
+.header__top {
+    @include grid(minmax(100px, 400px) 1fr, 20px 0, center);
+    @include size(100%, auto);
     align-items: center;
     font-size: 24px;
-    row-gap: 20px;    //0 for viewports without .search-2
     margin: 20px 0;
-    width: 100%;
 
-    @media (min-width:768px) {
+    @include mq(sm) {
         grid-gap: 0 60px;
     }
 
     img {
         cursor: pointer;
-        max-width: 100%;
-        height: auto; 
+        max-width: 100%; 
     } 
+
+    .icon-phonetalk {
+        color: $black;
+    }
 }
 
 .items {
-    display: flex;
+    @include flex(null, null, flex-end);
     gap: 20px;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
 
     button {
         padding: 10px 20px;
         font-size: 22px;
         border: none;
         border-radius: 4px;
-        color: #fff;
     }
 
     .menu {
-    background-color: #333645;
-    padding: 5px 15px;
-    font-size: 28px;
+    background-color: $primary--background;
 
     &:hover {
-        background-color: #212531;
+        background-color: $primary--background__darkest;
     }
 }
 }
 
-.icon-phonetalk {
-    color: #000;
-}
-
 .phone {
-    font-size: 32px;
+    font-size: 26px;
     background-color: transparent;
 
     &:hover {
@@ -59,42 +48,34 @@
     }
 }
 
-.support:hover {
-    background-color: darken($color: #4081d6, $amount: 10%);
-}
-
 .contact, .btn-search {
-    background-color: #999ba3;
+    background-color: $button--grey;
 
     &:hover {
-        background-color: darken($color: #999ba3, $amount: 10%);
+        background-color: $button--grey__dark;
     }
 }
 
 .search {
     display: flex;
-    justify-content: center;
-    max-width: 100%;
 
     &-1 {
         input {
             padding-left: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid $lightgrey;
         }
 
         button {
-            padding: 10px 20px 7px;
-            font-size: 24px;
-            color: #fff;
-            border: none;
+            padding: 10px 20px 5px;
+            font-size: 25px;
             border-radius: 0 4px 4px 0;
             
 
-            @media (min-width: 992px) {
+            @include mq(md) {
                 border-radius: 4px;
             }
 
-            @media (min-width: 1260px) {
+            @include mq(lg) {
                 border-radius: 0 4px 4px 0;
             }
         }
@@ -102,13 +83,13 @@
 
     &-2 {
         grid-column: 1 / -1;
-        border: 2px solid #ccc;
+        border: 2px solid $lightgrey;
         border-radius: 4px;
     
         input {
-            width: 100%;
+            @include size(100%, auto);
             padding-left: 10px;
-            background-color: #e6e6e6;
+            background-color: $lightergrey;
             border: none;
         }
 
@@ -116,7 +97,7 @@
             font-size: 16px;
             padding: 10px 10px;
             border: none;
-            background-color: #e6e6e6;
+            background-color: $lightergrey;
             cursor: pointer;
         }
     }
@@ -126,7 +107,7 @@
     display: none;
 }
 
-@media (min-width: 768px) {
+@include mq(sm) {
     .search-1 {
         display: flex;
     }
@@ -136,7 +117,7 @@
     }
 }
 
-@media (min-width: 992px) {
+@include mq(md) {
     .support, .contact {
         display: block;
     }
@@ -146,10 +127,8 @@
     }
 }
 
-@media (min-width: 1260px) {
+@include mq(lg) {
     .hidden-m {
         display: block;
     }
 }
-
-

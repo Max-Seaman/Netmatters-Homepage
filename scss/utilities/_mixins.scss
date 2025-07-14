@@ -1,5 +1,75 @@
 @mixin color-variant($selector, $i) {
-  #{$selector}-#{$i} {
-    background-color: nth($colors-logo, $i);
-  }
+    #{$selector}-#{$i} {
+        background-color: nth($colors-logo, $i);
+    }
+}
+
+$breakpoints: (
+    xs: 480px,
+    sm: 768px,
+    md: 992px,
+    lg: 1260px
+);
+
+@mixin mq($breakpoint) {
+    $size: map-get($breakpoints, $breakpoint);
+    @if $size {
+        @media (min-width: $size) {
+          @content;
+        }
+    } @else {
+        @warn "No value found for breakpoint `#{$breakpoint}`.";
+    }
+}
+
+@mixin flex($direction: null, $align: null, $justify: null, $wrap: null) {
+    display: flex;
+
+    @if $direction != null {
+        flex-direction: $direction;
+    }
+
+    @if $align != null {
+        align-items: $align;
+    }
+
+    @if $justify != null {
+        justify-content: $justify;
+    }
+
+    @if $wrap != null {
+        flex-wrap: $wrap;
+    }
+}
+
+@mixin grid($columns: null, $gap: null, $align: null) {
+    display: grid;
+
+    @if $columns != null {
+        grid-template-columns: $columns;
+    }
+
+    @if $gap != null {
+        grid-gap: $gap;
+    }
+}
+
+@mixin spacing($padding: null, $margin: null) {
+    @if $padding != null {
+        padding: $padding;
+    }
+  
+    @if $margin != null {
+        margin: $margin;
+    }
+}
+
+@mixin size($width: null, $height: null) {
+    @if $width != null {
+        width: $width;
+    }
+
+    @if $height != null {
+        height: $height;
+    }
 }

@@ -1,82 +1,62 @@
 .grid {
     max-width: 718px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-gap: 30px;
-    align-items: stretch;
+    @include grid(repeat(12, minmax(0, 1fr)), 30px);
    
-    @media (min-width: 768px) { 
-        .card-4, .card-5, .card-6, .card-7 {
+    @include mq(sm) { 
+        .card--4, .card--5, .card--6, .card--7 {
             grid-column: span 6;
         }
     }
 
-    @media (min-width: 992px) {
+    @include mq(md) {
         max-width: 942px;
-        .card-1, .card-2, .card-3 {
+        .card--1, .card--2, .card--3 {
             grid-column: span 4;
         }
     }
 
-    @media (min-width: 1260px) {
+    @include mq(lg) {
         max-width: 1210px;
-        .card-4, .card-5, .card-6, .card-7 {
+        .card--4, .card--5, .card--6, .card--7 {
             grid-column: span 3;
         }
-    }
-
-    a {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 30px;
-        height: 100%;
-        text-decoration: none;
     }
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    color: #000;
-    padding: 1.5em 1em;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    letter-spacing: 0.4px;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.07);
-    text-align: center;
+    @include flex(column, center, null, null);
     position: relative;
+    text-align: center;
+    padding: 30px;
+    color: $black;
+    border: 1px solid $lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.07);
     top: 0;
-
-    .circle {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        .icon {
-            font-size: 35px;
-            color: #fff;
-        }
-    }
     
     h2 {
         font-size: 1.3rem;
-        margin-bottom: 10px;
         font-weight: 400;
     }
 
     p {
         font-size: 0.8rem;
         line-height: 1.5;
+        margin-bottom: 20px;
     } 
 }
 
+.circle {
+    @include flex(null, center, center, null);
+    @include size(70px, 70px);
+    border-radius: 50%;
+
+    .icon {
+        font-size: 35px;
+        color: $white;
+    }
+}
+
 h1 {
-    align-self: flex-start;
-    color: #333645;
+    color: $primary--background;
 }

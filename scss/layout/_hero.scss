@@ -1,4 +1,4 @@
-@media (min-width: 992px) {
+@include mq(md) {
   .hero::before {
       content: '';
       position: absolute;
@@ -10,80 +10,62 @@
         transparent 100%    
       );
       z-index: 2;
-      mix-blend-mode: multiply;    //used to overlay gradient and image 
     } 
 }
 
 .hero {
+    @include flex(null, center, null, null);
+    @include size(100vw, 550px);
     position: relative;
-    width: 100vw;
-    height: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero img {
+    @include size(100%, 100%);
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     filter: brightness(50%);
 
-    @media (min-width: 992px) {
+    @include mq(md) {
       filter: none;
     }
   }
 
 .hero-txt {
-  display: flex;
-  position: relative;
-  color: #fff;
-  text-align: center;
-  z-index: 2;
-  line-height: 1.2;
+    color: $white;
+    text-align: center;
+    z-index: 2;
+    line-height: 1.2;
 
-  @media (min-width: 992px) {
-    text-align: left;
-    align-items: flex-start;
-  }
-  
-
-  h1 {
-    color: #fff;
-    font-size: 40px;
-    font-weight: 600;
-
-    @media (min-width: 992px) {
-      font-size: 64px;
-      margin: 10px 0;
+    @include mq(md) {
+        @include flex(null, flex-start, null, null);
+        text-align: left;
     }
-
     
-  }
 
-  h2 {
-    padding-bottom: 30px;
-    font-size: 20px;
-    font-weight: 600;
+    h1 {
+        color: $white;
+        font-size: 40px;
+        font-weight: 600;
 
-    @media (min-width: 992px) {
-      font-size: 26px;
-      width: 750px;
+        @media (min-width: 992px) {
+            font-size: 64px;
+            margin: 10px 0;
+        }    
     }
-  }
+
+    h2 {
+        padding-bottom: 30px;
+        font-size: 20px;
+        font-weight: 600;
+
+        @media (min-width: 992px) {
+            @include size(750px, auto);
+            font-size: 26px;
+        }
+    }
 }
 
 .hero-btn {
-  font-size: 20px;
-  padding: 20px;
-
-    &:hover {
-      background-color: #805f9e;
-    }
+    font-size: 20px;
+    padding: 20px;
 }
-
-
-

@@ -1,12 +1,9 @@
-.image {
-    display: flex;
-    align-items: center;
+.imageline {
+    @include flex(null, center, null, null);
     
     img {
         filter: grayscale(100%);
-        
         padding: 40px;
-        cursor: pointer;
         
         &:hover {
             filter: none;
@@ -16,12 +13,9 @@
 } 
 
 .image-card {
-    display: flex;
+    @include flex(null, center, null, null);
     position: relative;
-    align-items: center;
-    height: 200px;
-    overflow: visible;
-    
+    @include size(auto, 200px);
 }
 
 .hover-txt {
@@ -30,12 +24,11 @@
     left: 50%;
     bottom: 100%;
     transform: translate(-50%, -50px);
-    width: 300px; // moves box
-    background-color: #333645;
-    color: white;
+    @include size(300px, auto); 
+    background-color: $primary--background;
+    color: $white;
     padding: 20px;
     text-align: center;
-    align-items: end;
     opacity: 0;
     transition: 0.1s ease;
     font-size: 14px;
@@ -51,8 +44,6 @@
         bottom: -50px; //moves triangle below box
         left: 50%;
         transform: translateX(-50%) rotate(180deg);
-        width: 0;
-        height: 0;
         border-style: solid;
         border-color: transparent transparent #333645 transparent;
         border-width: 0 40px 50px 40px;
