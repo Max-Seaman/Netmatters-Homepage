@@ -1,3 +1,5 @@
+//MAIN CONTAINER
+
 nav {
     display: none;  //change to flex when necessary
     width: 100vw;
@@ -9,24 +11,26 @@ nav {
     }
 }
         
+//NAVBAR
 
 .navbar {
     @include size(calc(100% / 7), 100%);
     padding: 10px 0;
 
     i {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     a {
         @include flex(column, center, null, null);
         text-align: center;
         padding: 10px 15px;
-        font-size: 18px;
+        font-size: px-to-rem(18);
     }
 }
 
-/* Show dropdown on hover */
+// Show dropdown on hover
+
 .navbar:hover .dropdown {
     display: grid;
 }
@@ -44,6 +48,8 @@ nav {
         border-width: 0 89.25px 30px 89.25px;
     }
 }
+
+// DROPDOWN STYLES
 
 .dropdown {
     @include size(100%, auto);

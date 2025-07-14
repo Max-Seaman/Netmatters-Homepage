@@ -424,28 +424,28 @@ a, ul, li, h4 {
 }
 
 .news-txt {
+  font-size: 1rem;
   font-weight: 400;
   color: #000;
-  font-size: 1rem;
 }
 
 .view {
   padding-top: 30px;
   color: #333645;
+  font-size: 1.6875rem;
   font-weight: 600;
-  font-size: 27px;
 }
 @media (min-width: 768px) {
   .view {
     display: none;
   }
 }
-.view-right {
+.view--right {
   display: none;
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 @media (min-width: 768px) {
-  .view-right {
+  .view--right {
     display: block;
   }
 }
@@ -454,18 +454,18 @@ a, ul, li, h4 {
 }
 
 #service {
+  font-size: 2.6875rem;
   font-weight: 400;
-  font-size: 43px;
 }
 
 #latest-news {
-  margin-top: 30px;
+  font-size: 2.25rem;
   font-weight: 600;
-  font-size: 36px;
+  margin-top: 30px;
 }
 
 small {
-  font-size: 10px;
+  font-size: 0.625rem;
   padding-top: 10px;
 }
 
@@ -496,7 +496,7 @@ small {
   }
 }
 .social-icons button .icon {
-  font-size: 30px;
+  font-size: 1.875rem;
   color: #fff;
 }
 
@@ -514,7 +514,7 @@ small {
 }
 
 .icon-star {
-  font-size: 48px;
+  font-size: 3rem;
   color: #ffa600;
 }
 
@@ -576,7 +576,7 @@ main {
 }
 .container__dropdown h1 {
   color: #fff;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 500;
   grid-column: 1/-1;
 }
@@ -633,7 +633,7 @@ main {
   width: 100%;
   height: auto;
   align-items: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin: 20px 0;
 }
 @media (min-width: 768px) {
@@ -656,7 +656,7 @@ main {
 }
 .items button {
   padding: 10px 20px;
-  font-size: 22px;
+  font-size: 1.375rem;
   border: none;
   border-radius: 4px;
 }
@@ -668,7 +668,7 @@ main {
 }
 
 .phone {
-  font-size: 26px;
+  font-size: 1.625rem;
   background-color: transparent;
 }
 .phone:hover {
@@ -691,7 +691,7 @@ main {
 }
 .search-1 button {
   padding: 10px 20px 5px;
-  font-size: 25px;
+  font-size: 1.5625rem;
   border-radius: 0 4px 4px 0;
 }
 @media (min-width: 992px) {
@@ -717,7 +717,7 @@ main {
   border: none;
 }
 .search-2 button {
-  font-size: 16px;
+  font-size: 1rem;
   padding: 10px 10px;
   border: none;
   background-color: #e6e6e6;
@@ -767,7 +767,7 @@ nav {
   padding: 10px 0;
 }
 .navbar i {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 .navbar a {
   display: flex;
@@ -775,10 +775,9 @@ nav {
   align-items: center;
   text-align: center;
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
-/* Show dropdown on hover */
 .navbar:hover .dropdown {
   display: grid;
 }
@@ -857,44 +856,44 @@ nav {
   }
 }
 
-.hero-txt {
+.hero__txt {
   color: #fff;
   text-align: center;
   z-index: 2;
   line-height: 1.2;
 }
 @media (min-width: 992px) {
-  .hero-txt {
+  .hero__txt {
     display: flex;
     align-items: flex-start;
     text-align: left;
   }
 }
-.hero-txt h1 {
-  color: #fff;
+.hero__txt h1 {
   font-size: 40px;
   font-weight: 600;
+  color: #fff;
 }
 @media (min-width: 992px) {
-  .hero-txt h1 {
+  .hero__txt h1 {
     font-size: 64px;
     margin: 10px 0;
   }
 }
-.hero-txt h2 {
-  padding-bottom: 30px;
+.hero__txt h2 {
   font-size: 20px;
   font-weight: 600;
+  padding-bottom: 30px;
 }
 @media (min-width: 992px) {
-  .hero-txt h2 {
+  .hero__txt h2 {
     width: 750px;
     height: auto;
     font-size: 26px;
   }
 }
 
-.hero-btn {
+.hero__btn {
   font-size: 20px;
   padding: 20px;
 }
@@ -947,7 +946,8 @@ nav {
 .card p {
   font-size: 0.8rem;
   line-height: 1.5;
-  margin-bottom: 20px;
+  padding: 0 5px;
+  margin: 0 0 20px 0;
 }
 
 .circle {
@@ -959,7 +959,7 @@ nav {
   border-radius: 50%;
 }
 .circle .icon {
-  font-size: 35px;
+  font-size: 2.1875rem;
   color: #fff;
 }
 
@@ -984,7 +984,7 @@ h1 {
   align-items: center;
   position: relative;
   width: auto;
-  height: 200px;
+  height: 150px;
 }
 
 .hover-txt {
@@ -1001,7 +1001,7 @@ h1 {
   text-align: center;
   opacity: 0;
   transition: 0.1s ease;
-  font-size: 14px;
+  font-size: 0.875rem;
   pointer-events: none;
 }
 .hover-txt h2 {
@@ -1051,12 +1051,12 @@ b:hover {
   }
 }
 .welcome h2 {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 600;
   margin: 0;
 }
 .welcome p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.9;
   margin: 12px 0;
 }
@@ -1070,9 +1070,9 @@ b:hover {
   white-space: nowrap;
 }
 .welcome .buttons a {
-  padding: 15px 30px;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
+  padding: 15px 30px;
 }
 .welcome-link {
   font-weight: 600;
@@ -1092,12 +1092,12 @@ blockquote {
 }
 blockquote .quote {
   font-size: 21px;
-  line-height: 1.5;
   font-weight: 600;
+  line-height: 1.5;
 }
 
 figcaption {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 figcaption a {
   font-weight: 600;
@@ -1146,15 +1146,15 @@ strong {
 }
 .content h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .content p {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
-.content-insights h3 {
+.content--insights h3 {
   color: #67809e;
 }
-.content-careers h3 {
+.content--careers h3 {
   color: #4081d6;
 }
 
@@ -1184,16 +1184,16 @@ strong {
   right: 0;
   top: 2%;
   color: #fff;
-  font-size: 0.75rem;
   padding: 0 10px;
-  line-height: 1.5rem;
   text-transform: uppercase;
   border-radius: 2px 0 0 2px;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
 }
-.tag-insights {
+.tag--insights {
   background-color: #67809e;
 }
-.tag-careers {
+.tag--careers {
   background-color: #4081d6;
 }
 
@@ -1231,7 +1231,7 @@ footer .footer__row {
   flex-wrap: wrap;
   width: 100%;
   height: auto;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.57;
   padding: 0 0 30px 20px;
 }
@@ -1263,7 +1263,7 @@ footer .footer__row .footer__menu h4 {
 .footer__bottom p {
   align-self: flex-start;
   padding: 5px;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #fff;
 }
 

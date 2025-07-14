@@ -1,3 +1,5 @@
+//MAIN CONTAINER
+
 footer {
     padding: 30px 0 0;
     @include size(100%, auto);
@@ -19,8 +21,7 @@ footer {
     .footer__row {
         @include flex(null, null, null, wrap);
         @include size(100%, auto);
-        font-size: 14px;
-        line-height: 1.57;
+        @include font(px-to-rem(14), null, 1.57);
         padding: 0 0 30px 20px;
 
         .footer__menu {
@@ -48,12 +49,16 @@ footer {
     }
 }
 
+// COPYRIGHT SECTION
+
 .footer__bottom p {
     align-self: flex-start;
     padding: 5px;
-    font-size: 12px;
+    font-size: 0.75rem;
     color: $white;
 }
+
+// FIXED FOOTER
 
 .footer__fixed {
     position: fixed;

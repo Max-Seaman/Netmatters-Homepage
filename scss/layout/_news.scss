@@ -8,6 +8,8 @@
     transition: transform .5s ease;
 }
 
+//CARD TEXT
+
 .content {
     @include flex(column, null, null, null);
     border: 1px solid $lightgrey;
@@ -17,25 +19,27 @@
 
     h3 {
         margin: 0;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     p {
-        font-size: 13px;
+        font-size: px-to-rem(13);
     }
 
-    &-insights{
+    &--insights{
         h3 {
             color: $primary--grey;
         }
     }
 
-    &-careers {
+    &--careers {
         h3 {
             color: $primary--blue;
         }
     }
 }
+
+// AUTHOR SECTION
 
 .news-author {
     @include flex(null, center, null, null);
@@ -51,6 +55,8 @@
     margin: 5px;
 }
 
+//BUTTONS AND TAGS
+
 .btn__news {
     width: fit-content;
     @include spacing(10px 15px, auto 0 20px);
@@ -61,20 +67,21 @@
     right: 0;
     top: 2%;
     color: $white;
-    font-size: .75rem;
     padding: 0 10px;
-    line-height: 1.5rem;
     text-transform: uppercase;
     border-radius: 2px 0 0 2px;
+    @include font(0.75rem, null, 1.5rem);
    
-    &-insights {
+    &--insights {
         background-color: $primary--grey;
     }
 
-    &-careers {
+    &--careers {
         background-color: $primary--blue;
     }
 }
+
+//MEDIA QUERIES
 
 @include mq(sm) {
     .news--hidden {

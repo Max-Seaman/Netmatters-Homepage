@@ -25,24 +25,22 @@ a, ul , li, h4 {
 }
 
 .news-txt {
-    font-weight: 400;
+    @include font(1rem, 400);
     color: $black;
-    font-size: 1rem;
 }
 
 .view {
     padding-top: 30px;
     color: $primary--background;
-    font-weight: 600;
-    font-size: 27px;
+    @include font(px-to-rem(27), 600);
 
     @include mq(sm) {
         display: none;
     }
 
-    &-right {
+    &--right {
         display: none;
-        font-size: 36px;
+        font-size: 2.25rem;
 
         @include mq(sm) {
             display: block;
@@ -51,24 +49,20 @@ a, ul , li, h4 {
  
     &:hover {
         text-decoration: underline;
-    }
-
-    
+    } 
 }
 
 #service {
-    font-weight: 400;
-    font-size: 43px;
+    @include font(px-to-rem(43), 400);
 }
 
 #latest-news {
+    @include font(2.25rem, 600);
     margin-top: 30px;
-    font-weight: 600;
-    font-size: 36px;
 }
 
 small {
-    font-size: 10px;
+    font-size: px-to-rem(10);
     padding-top: 10px;
 }
 

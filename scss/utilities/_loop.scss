@@ -9,6 +9,8 @@ $colors-logo: (
 );
 
 @for $i from 1 through length($colors-logo) {
+    // GRID CARD HOVER
+
     .card--#{$i}:hover {
         background-color: nth($colors-logo, $i);
         top: -10px;
@@ -29,6 +31,8 @@ $colors-logo: (
         }
     }
 
+    //NAVBAR HOVER
+
     .navbar__item--#{$i}:hover {
         background-color: nth($colors-logo, $i);
 
@@ -37,7 +41,13 @@ $colors-logo: (
         }
     }
 
-    @include color-variant('.circle', $i);
+    //GRID ICON LOGOS
+
+    .circle-#{$i} {
+        background-color: nth($colors-logo, $i);
+    }
+
+    //DROPDOWN BACKGROUND
     
     .dropdown__item--#{$i} {
         background-color: darken(nth($colors-logo, $i), 10%);
@@ -46,6 +56,8 @@ $colors-logo: (
     .navicon-#{$i} {
         color: nth($colors-logo, $i);
     }
+
+    //DROPDOWN TRIANGLE
 
     .dropdown__item--#{$i}::before {
         border-color: transparent transparent nth($colors-logo, $i) transparent;
@@ -74,6 +86,8 @@ $colors-button: (
     }
 }
 
+//OTHER BUTTONS ELSEWHERE WITH SAME COLORS
+
 $hover-btns: (1, 2, 3, 5);
 
 @each $i in $hover-btns {
@@ -81,6 +95,8 @@ $hover-btns: (1, 2, 3, 5);
         background-color: darken(nth($colors-button, $i), 10%);
     }
 }
+
+// GRID LAYOUT 
 
 $cards: (
     card--1,

@@ -1,9 +1,12 @@
+//BACKGROUND CONTAINER
 .about {
     background-color: $primary--background;
     color: $white;
     padding-top: 40px;
 }
 
+
+//MAIN TEXT
 .welcome {
     @include flex(column);
     
@@ -16,14 +19,12 @@
     }
 
     h2 {
-        font-size: 36px;
-        font-weight: 600;
+        @include font(2.25rem, 600);
         margin: 0;
     }
 
     p {
-        font-size: 16px;
-        line-height: 1.9;  
+        @include font(1rem, null, 1.9); 
         margin: 12px 0; 
     }
 
@@ -35,9 +36,8 @@
         white-space: nowrap;
         
         a  {
+            @include font(1.25rem, 500);
             padding: 15px 30px;
-            font-size: 20px;
-            font-weight: 500;
         }
     }
 
@@ -60,14 +60,12 @@ blockquote {
     font-style: italic;
     
     .quote {
-        font-size: 21px;
-        line-height: 1.5;
-        font-weight: 600;
+        @include font(21px, 600, 1.5);
     }
 }
 
 figcaption {
-    font-size: 18px;
+    font-size: px-to-rem(18);
     
     a {
         font-weight: 600;
@@ -83,6 +81,8 @@ strong {
     color: #a3a8ac;
     font-weight: 600;
 }
+
+//BUTTONS
 
 .culture {
     background-color: $primary--background__dark;

@@ -1,8 +1,10 @@
+//MAIN CONTAINER
+
 .header__top {
     @include grid(minmax(100px, 400px) 1fr, 20px 0, center);
     @include size(100%, auto);
     align-items: center;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin: 20px 0;
 
     @include mq(sm) {
@@ -19,13 +21,15 @@
     }
 }
 
+// ITEMS ON THE RIGHT
+
 .items {
     @include flex(null, null, flex-end);
     gap: 20px;
 
     button {
         padding: 10px 20px;
-        font-size: 22px;
+        font-size: px-to-rem(22);
         border: none;
         border-radius: 4px;
     }
@@ -40,7 +44,7 @@
 }
 
 .phone {
-    font-size: 26px;
+    font-size: px-to-rem(26);
     background-color: transparent;
 
     &:hover {
@@ -67,7 +71,7 @@
 
         button {
             padding: 10px 20px 5px;
-            font-size: 25px;
+            font-size: px-to-rem(25);
             border-radius: 0 4px 4px 0;
             
 
@@ -94,7 +98,7 @@
         }
 
         button {
-            font-size: 16px;
+            font-size: 1rem;
             padding: 10px 10px;
             border: none;
             background-color: $lightergrey;
@@ -106,6 +110,8 @@
 .support, .contact, .search-1 {
     display: none;
 }
+
+// MEDIA QUERIES
 
 @include mq(sm) {
     .search-1 {

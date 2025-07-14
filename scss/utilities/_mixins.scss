@@ -1,8 +1,4 @@
-@mixin color-variant($selector, $i) {
-    #{$selector}-#{$i} {
-        background-color: nth($colors-logo, $i);
-    }
-}
+//MEDIA QUERIES
 
 $breakpoints: (
     xs: 480px,
@@ -21,6 +17,8 @@ $breakpoints: (
         @warn "No value found for breakpoint `#{$breakpoint}`.";
     }
 }
+
+//FLEX DISPLAY
 
 @mixin flex($direction: null, $align: null, $justify: null, $wrap: null) {
     display: flex;
@@ -42,6 +40,8 @@ $breakpoints: (
     }
 }
 
+//GRID DISPLAY
+
 @mixin grid($columns: null, $gap: null, $align: null) {
     display: grid;
 
@@ -54,6 +54,8 @@ $breakpoints: (
     }
 }
 
+//PADDING AND MARGIN
+
 @mixin spacing($padding: null, $margin: null) {
     @if $padding != null {
         padding: $padding;
@@ -64,6 +66,8 @@ $breakpoints: (
     }
 }
 
+//WIDTH AND HEIGHT
+
 @mixin size($width: null, $height: null) {
     @if $width != null {
         width: $width;
@@ -71,5 +75,21 @@ $breakpoints: (
 
     @if $height != null {
         height: $height;
+    }
+}
+
+//FONT SIZE, WEIGHT AND LINE-HEIGHT
+
+@mixin font($size, $weight: null, $lineheight: null) {
+    @if $size != null {
+        font-size: $size;
+    }
+    
+    @if $weight != null {
+        font-weight: $weight;
+    }
+    
+    @if $lineheight !=null {
+        line-height: $lineheight;
     }
 }

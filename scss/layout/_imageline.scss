@@ -1,3 +1,5 @@
+//MAIN CONTAINER
+
 .imageline {
     @include flex(null, center, null, null);
     
@@ -12,11 +14,15 @@
 
 } 
 
+//IMAGE CONTAINER 
+
 .image-card {
     @include flex(null, center, null, null);
     position: relative;
-    @include size(auto, 200px);
+    @include size(auto, 150px);
 }
+
+//TEXT CARD
 
 .hover-txt {
     display: grid;
@@ -31,7 +37,7 @@
     text-align: center;
     opacity: 0;
     transition: 0.1s ease;
-    font-size: 14px;
+    font-size: px-to-rem(14);
     pointer-events: none;
 
     h2 {

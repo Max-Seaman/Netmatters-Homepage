@@ -18,7 +18,7 @@
         }
         
         .icon {
-            font-size: 30px;
+            font-size: px-to-rem(30);
             color: $white;
         }
     }
@@ -40,6 +40,6 @@
 }
 
 .icon-star {
-    font-size: 48px;
+    font-size: 3rem;
     color: $star;
 }

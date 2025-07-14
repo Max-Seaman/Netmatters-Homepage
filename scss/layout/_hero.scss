@@ -1,3 +1,5 @@
+//BLACK FADED FILTER
+
 @include mq(md) {
   .hero::before {
       content: '';
@@ -13,11 +15,15 @@
     } 
 }
 
+//MAIN CONTAINER
+
 .hero {
     @include flex(null, center, null, null);
     @include size(100vw, 550px);
     position: relative;
 }
+
+//IMAGE
 
 .hero img {
     @include size(100%, 100%);
@@ -30,7 +36,9 @@
     }
   }
 
-.hero-txt {
+//TEXT AND BUTTON ON IMAGE
+
+.hero__txt {
     color: $white;
     text-align: center;
     z-index: 2;
@@ -43,9 +51,8 @@
     
 
     h1 {
+        @include font(40px, 600);
         color: $white;
-        font-size: 40px;
-        font-weight: 600;
 
         @media (min-width: 992px) {
             font-size: 64px;
@@ -54,9 +61,8 @@
     }
 
     h2 {
+        @include font(20px, 600);
         padding-bottom: 30px;
-        font-size: 20px;
-        font-weight: 600;
 
         @media (min-width: 992px) {
             @include size(750px, auto);
@@ -65,7 +71,7 @@
     }
 }
 
-.hero-btn {
+.hero__btn {
     font-size: 20px;
     padding: 20px;
 }

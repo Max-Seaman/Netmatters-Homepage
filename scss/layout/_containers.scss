@@ -1,7 +1,7 @@
 html, body {
     margin: 0 auto;
     overflow-x: hidden;
-    letter-spacing: 0.4px;;
+    letter-spacing: 0.4px;
 }
 
 main {
@@ -31,18 +31,19 @@ main {
         max-width: 1250px;
     }
 
+    // DROPDOWN CONTAINER
     &__dropdown {
         @include grid(repeat(3, 1fr));
         text-transform: none;
 
         h1 {
             color: $white;
-            font-size: 32px;
-            font-weight: 500;
+            @include font(2rem, 500);
             grid-column: 1 / -1;
         }
     }
 
+    // NEWS CARDS CONTAINER
     &__news {
         @include spacing(0, 0 20px);
 
@@ -53,21 +54,25 @@ main {
         }
     }
 
+    //FOOTER CONTAINER
     &__footer {
         background-color: $primary--background;
     }
 
+    //DROPDOWN LIST CONTAINER
     &__ul {
         flex-direction: row;
         padding: 0;
         line-height: 1;
     }
 
+    //COPYRIGHT SECTION AT THE BOTTOM OF THE FOOTER CONTAINER
     &__bottom {
         @include size(100vw);
         background-color: $primary--background__darker;
     }
 
+    //NEWS IMAGES CONTAINERS 
     &__image {
         padding: 0;
 
@@ -77,15 +82,18 @@ main {
     }
 }
 
+//STARS CONTAINER
 .stars {
     margin: 25px 0;
 }
 
+//HEADINGS FOR SERVICES AND NEWS SECTIONS
 .headings {
     @include flex(null, null, space-between, null);
     @include size(100%, auto);
 }
 
+//WELCOME SECTION CONTAINER 
 @include mq(md) {
     .about .container {
         flex-direction: row;
