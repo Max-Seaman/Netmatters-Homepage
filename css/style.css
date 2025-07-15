@@ -985,12 +985,13 @@ h1 {
 .imageline {
   display: flex;
   align-items: center;
+  margin-top: 40px;
 }
 .imageline img {
   filter: grayscale(100%);
-  padding: 60px 45px 40px;
-  max-height: 220px;
-  max-width: 280px;
+  margin: 60px 45px 40px;
+  max-height: 80px;
+  max-width: 200px;
 }
 .imageline img:hover {
   filter: none;
@@ -1008,7 +1009,7 @@ h1 {
   display: grid;
   position: absolute;
   left: 50%;
-  bottom: 100%;
+  bottom: 80%;
   transform: translate(-50%, -50px);
   width: 300px;
   height: auto;

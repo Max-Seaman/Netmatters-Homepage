@@ -2,12 +2,13 @@
 
 .imageline {
     @include flex(null, center, null, null);
+    margin-top: 40px;
     
     img {
         filter: grayscale(100%);
-        padding: 60px 45px 40px;
-        max-height: 220px;
-        max-width: 280px;
+        margin: 60px 45px 40px;
+        max-height: 80px;
+        max-width: 200px;
         
         &:hover {
             filter: none;
@@ -30,7 +31,7 @@
     display: grid;
     position: absolute;
     left: 50%;
-    bottom: 100%;
+    bottom: 80%;
     transform: translate(-50%, -50px);
     @include size(300px, auto); 
     background-color: $primary--background;
