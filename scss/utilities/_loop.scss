@@ -53,6 +53,8 @@ $colors-logo: (
         background-color: darken(nth($colors-logo, $i), 10%);
     }
 
+    //NAV ICON LOGOS
+
     .navicon-#{$i} {
         color: nth($colors-logo, $i);
     }
@@ -69,6 +71,8 @@ $colors-logo: (
         }
     }
 }
+
+//BUTTON COLORS
 
 $colors-button: (
     $primary--yellow,
