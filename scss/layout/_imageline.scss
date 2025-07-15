@@ -5,7 +5,9 @@
     
     img {
         filter: grayscale(100%);
-        padding: 40px;
+        padding: 60px 45px 40px;
+        max-height: 220px;
+        max-width: 280px;
         
         &:hover {
             filter: none;
@@ -19,7 +21,7 @@
 .image-card {
     @include flex(null, center, null, null);
     position: relative;
-    @include size(auto, 150px);
+    @include size(auto, 180px);
 }
 
 //TEXT CARD

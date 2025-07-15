@@ -10,7 +10,7 @@ footer {
     }
 
     .footer__top {
-        @include spacing(0 0 0 20px, 10px 0 0);
+        margin-top: 10px;
 
         img {
             filter: brightness(0) invert(1);
@@ -22,7 +22,7 @@ footer {
         @include flex(null, null, null, wrap);
         @include size(100%, auto);
         @include font(px-to-rem(14), null, 1.57);
-        padding: 0 0 30px 20px;
+        padding-bottom: 20px;
 
         .footer__menu {
             flex: 100%;
@@ -56,6 +56,7 @@ footer {
     padding: 5px;
     font-size: 0.75rem;
     color: $white;
+    z-index: 11;
 }
 
 // FIXED FOOTER

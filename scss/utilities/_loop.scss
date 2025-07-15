@@ -14,7 +14,6 @@ $colors-logo: (
     .card--#{$i}:hover {
         background-color: nth($colors-logo, $i);
         top: -10px;
-        transition: 0.5s ease;
         color: $white;
     
         .circle-#{$i} {

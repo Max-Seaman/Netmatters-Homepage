@@ -34,13 +34,17 @@
         border-radius: 4px;
     }
 
-    .menu {
-    background-color: $primary--background;
 
-    &:hover {
-        background-color: $primary--background__darkest;
+    .menu {
+        background-color: $primary--background;
+        font-size: 2rem;
+        padding: 5px 15px 0;
+        
+
+        &:hover {
+            background-color: $primary--background__darkest;
+        }
     }
-}
 }
 
 .phone {
@@ -60,14 +64,27 @@
     }
 }
 
+.support, .contact {
+    i  {
+        padding-right: 10px;
+    }
+}
+
 .search {
     display: flex;
 
     &-1 {
         input {
+            outline: none;
             padding-left: 10px;
             border: 1px solid $lightgrey;
+
+            &:focus {
+                border-color: #5bbfde;
+                box-shadow: 0 0 5px 3px rgba(91, 191, 222, 0.2);
+            }
         }
+
 
         button {
             padding: 10px 20px 5px;
@@ -95,6 +112,7 @@
             padding-left: 10px;
             background-color: $lightergrey;
             border: none;
+            outline: none;
         }
 
         button {

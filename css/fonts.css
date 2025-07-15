@@ -24,6 +24,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-menu:before {
+  content: "\e90c";
+}
+.icon-question:before {
+  content: "\e901";
+}
+.icon-cloudsmall:before {
+  content: "\e928";
+}
+.icon-consultancy:before {
+  content: "\e908";
+}
+.icon-bar:before {
+  content: "\e900";
+}
 .icon-monitor:before {
   content: "\e909";
 }
@@ -47,9 +62,6 @@
 }
 .icon-search:before {
   content: "\e986";
-}
-.icon-menu1:before {
-  content: "\e9bd";
 }
 .icon-download:before {
   content: "\e9c7";
@@ -131,18 +143,6 @@
 }
 .icon-cloud:before {
   content: "\e926";
-}
-.icon-question:before {
-  content: "\e901";
-}
-.icon-cloudsmall:before {
-  content: "\e928";
-}
-.icon-consultancy:before {
-  content: "\e908";
-}
-.icon-bar:before {
-  content: "\e900";
 }
 .icon-x:before {
   content: "\e902";
