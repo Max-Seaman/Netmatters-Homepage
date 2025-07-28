@@ -13,7 +13,13 @@
 
     img {
         cursor: pointer;
-        max-width: 100%; 
+        width: 100%;
+        max-width: 400px; 
+        margin-top: 10px;
+
+        @include mq(sm) {
+            max-width: 375px;
+        }
     } 
 
     .icon-phonetalk {
@@ -28,18 +34,27 @@
     gap: 20px;
 
     button {
-        padding: 10px 20px;
-        font-size: px-to-rem(22);
+        padding: 0 0 9px 16px;
+        font-size: px-to-rem(18);
         border: none;
         border-radius: 4px;
+
+        @include mq(sm) {
+            padding: 14px 20px;
+        }
     }
 
 
     .menu {
+        @include flex(column, null, space-between);
+        @include size(63px, 55px);
+        padding: 15px;
         background-color: $primary--background;
-        font-size: 2rem;
-        padding: 5px 15px 0;
-        
+
+        span {
+            @include size(100%, 4px);
+            background-color: $white;
+        }
 
         &:hover {
             background-color: $primary--background__darkest;
@@ -48,7 +63,7 @@
 }
 
 .phone {
-    font-size: px-to-rem(26);
+    font-size: 2rem;
     background-color: transparent;
 
     &:hover {
@@ -65,8 +80,9 @@
 }
 
 .support, .contact {
+
     i  {
-        padding-right: 10px;
+        padding-right: 5px;
     }
 }
 
@@ -87,7 +103,7 @@
 
 
         button {
-            padding: 10px 20px 5px;
+            padding: 11px 19px 6px;
             font-size: px-to-rem(25);
             border-radius: 0 4px 4px 0;
             
@@ -105,7 +121,7 @@
     &-2 {
         grid-column: 1 / -1;
         border: 2px solid $lightgrey;
-        border-radius: 4px;
+        border-radius: 2px;
     
         input {
             @include size(100%, auto);
@@ -154,5 +170,6 @@
 @include mq(lg) {
     .hidden-m {
         display: block;
+        width: 240px;
     }
 }

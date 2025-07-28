@@ -2,7 +2,6 @@
 
 .imageline {
     @include flex(null, center, null, null);
-    margin-top: 40px;
     
     img {
         filter: grayscale(100%);

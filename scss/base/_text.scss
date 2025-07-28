@@ -45,6 +45,10 @@ a, ul , li, h4 {
             display: block;
         }
     }
+
+    &--last {
+        padding-top: 0;
+    }
  
     &:hover {
         text-decoration: underline;

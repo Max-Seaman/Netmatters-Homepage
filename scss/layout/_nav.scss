@@ -1,7 +1,7 @@
 //MAIN CONTAINER
 
 nav {
-    display: none;  //change to flex when 992px
+    display: none;  
     width: 100vw;
     background-color: $primary--background;
     text-transform: uppercase;
@@ -15,7 +15,6 @@ nav {
 
 .navbar {
     @include size(calc(100% / 7), 100%);
-    padding: 10px 0;
 
     i {
         font-size: 1.5rem;
@@ -23,29 +22,42 @@ nav {
 
     a {
         @include flex(column, center, null, null);
+        @include size(100%, 100%);
         text-align: center;
-        padding: 10px 15px;
+        padding: 20px 15px;
         font-size: px-to-rem(18);
     }
+
 }
 
 // Show dropdown on hover
 
-.navbar:hover .dropdown {
-    display: grid;
-}
+.navbar:hover {
+    
+    .dropdown {
+        display: grid;
+    }
 
-.dropdown::before {
-    content: '';
-    position: relative;
-    transform: translateX(-50%) rotate(180deg);
-    @include size(0, 0);
-    border-style: solid;
-    border-width: 0 70px 30px 70px;
-    z-index: 3;
+    .triangle {
+        position: relative;
 
-    @include mq(lg) {
-        border-width: 0 89.25px 30px 89.25px;
+            &::after {
+            content: '';
+            position: absolute;
+            transform: translateX(-50%);
+            @include size(0, 0);
+            border-style: solid;
+            border-width: 38px 70.14px 0 70.14px;
+            z-index: 10;
+            top: 119px;
+            left: 70px;
+
+            @include mq(lg) {
+                border-width: 38px 89.28px 0 89.28px;
+                top: 101px;
+                left: 90px;
+            }
+        }
     }
 }
 
@@ -55,13 +67,13 @@ nav {
     @include size(100%, auto);
     display: none;
     position: absolute;
-    top: 220px;
+    top: 243px;
     left: 0;
     z-index: 3;
     padding: 20px 10px 40px;
 
     @include mq(lg) {
-        top: 210px;
+        top: 225px;
     }
 
     a {

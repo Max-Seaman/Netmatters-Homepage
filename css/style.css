@@ -34,15 +34,8 @@
   color: #67809e;
 }
 
-.dropdown__item--1::before {
-  border-color: transparent transparent #67809e transparent;
-  top: -68%;
-  left: calc(50vw + 140px * 1 - 580px);
-}
-@media (min-width: 1260px) {
-  .dropdown__item--1::before {
-    left: calc(50vw + 178.5px * 1 - 730px);
-  }
+.triangle--1::after {
+  border-color: #67809e transparent transparent transparent;
 }
 
 .card--2:hover {
@@ -80,15 +73,8 @@
   color: #4081d6;
 }
 
-.dropdown__item--2::before {
-  border-color: transparent transparent #4081d6 transparent;
-  top: -68%;
-  left: calc(50vw + 140px * 2 - 580px);
-}
-@media (min-width: 1260px) {
-  .dropdown__item--2::before {
-    left: calc(50vw + 178.5px * 2 - 730px);
-  }
+.triangle--2::after {
+  border-color: #4081d6 transparent transparent transparent;
 }
 
 .card--3:hover {
@@ -126,15 +112,8 @@
   color: #2fcc70;
 }
 
-.dropdown__item--3::before {
-  border-color: transparent transparent #2fcc70 transparent;
-  top: -68%;
-  left: calc(50vw + 140px * 3 - 580px);
-}
-@media (min-width: 1260px) {
-  .dropdown__item--3::before {
-    left: calc(50vw + 178.5px * 3 - 730px);
-  }
+.triangle--3::after {
+  border-color: #2fcc70 transparent transparent transparent;
 }
 
 .card--4:hover {
@@ -172,15 +151,8 @@
   color: #d64540;
 }
 
-.dropdown__item--4::before {
-  border-color: transparent transparent #d64540 transparent;
-  top: -68%;
-  left: calc(50vw + 140px * 4 - 580px);
-}
-@media (min-width: 1260px) {
-  .dropdown__item--4::before {
-    left: calc(50vw + 178.5px * 4 - 730px);
-  }
+.triangle--4::after {
+  border-color: #d64540 transparent transparent transparent;
 }
 
 .card--5:hover {
@@ -218,15 +190,8 @@
   color: #926fb0;
 }
 
-.dropdown__item--5::before {
-  border-color: transparent transparent #926fb0 transparent;
-  top: -68%;
-  left: calc(50vw + 140px * 5 - 580px);
-}
-@media (min-width: 1260px) {
-  .dropdown__item--5::before {
-    left: calc(50vw + 178.5px * 5 - 730px);
-  }
+.triangle--5::after {
+  border-color: #926fb0 transparent transparent transparent;
 }
 
 .card--6:hover {
@@ -264,15 +229,8 @@
   color: #f52559;
 }
 
-.dropdown__item--6::before {
-  border-color: transparent transparent #f52559 transparent;
-  top: -68%;
-  left: calc(50vw + 140px * 6 - 580px);
-}
-@media (min-width: 1260px) {
-  .dropdown__item--6::before {
-    left: calc(50vw + 178.5px * 6 - 730px);
-  }
+.triangle--6::after {
+  border-color: #f52559 transparent transparent transparent;
 }
 
 .card--7:hover {
@@ -310,15 +268,8 @@
   color: #cf4125;
 }
 
-.dropdown__item--7::before {
-  border-color: transparent transparent #cf4125 transparent;
-  top: -68%;
-  left: calc(50vw + 140px * 7 - 580px);
-}
-@media (min-width: 1260px) {
-  .dropdown__item--7::before {
-    left: calc(50vw + 178.5px * 7 - 730px);
-  }
+.triangle--7::after {
+  border-color: #cf4125 transparent transparent transparent;
 }
 
 .btn-1 {
@@ -441,6 +392,9 @@ a, ul, li, h4 {
   .view--right {
     display: block;
   }
+}
+.view--last {
+  padding-top: 0;
 }
 .view:hover {
   text-decoration: underline;
@@ -575,6 +529,7 @@ main {
 }
 .container__news {
   padding: 0;
+  margin-bottom: 30px;
   transition: transform 0.5s ease;
 }
 .container__news:hover {
@@ -645,7 +600,14 @@ main {
 }
 .header__top img {
   cursor: pointer;
-  max-width: 100%;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .header__top img {
+    max-width: 375px;
+  }
 }
 .header__top .icon-phonetalk {
   color: #000;
@@ -657,22 +619,36 @@ main {
   gap: 20px;
 }
 .items button {
-  padding: 10px 20px;
-  font-size: 1.375rem;
+  padding: 0 0 9px 16px;
+  font-size: 1.125rem;
   border: none;
   border-radius: 4px;
 }
+@media (min-width: 768px) {
+  .items button {
+    padding: 14px 20px;
+  }
+}
 .items .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 63px;
+  height: 55px;
+  padding: 15px;
   background-color: #333645;
-  font-size: 2rem;
-  padding: 5px 15px 0;
+}
+.items .menu span {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
 }
 .items .menu:hover {
   background-color: rgb(24.99, 26.46, 33.81);
 }
 
 .phone {
-  font-size: 1.625rem;
+  font-size: 2rem;
   background-color: transparent;
 }
 .phone:hover {
@@ -687,7 +663,7 @@ main {
 }
 
 .support i, .contact i {
-  padding-right: 10px;
+  padding-right: 5px;
 }
 
 .search {
@@ -703,7 +679,7 @@ main {
   box-shadow: 0 0 5px 3px rgba(91, 191, 222, 0.2);
 }
 .search-1 button {
-  padding: 10px 20px 5px;
+  padding: 11px 19px 6px;
   font-size: 1.5625rem;
   border-radius: 0 4px 4px 0;
 }
@@ -720,7 +696,7 @@ main {
 .search-2 {
   grid-column: 1/-1;
   border: 2px solid #ccc;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .search-2 input {
   width: 100%;
@@ -761,6 +737,7 @@ main {
 @media (min-width: 1260px) {
   .hidden-m {
     display: block;
+    width: 240px;
   }
 }
 nav {
@@ -778,7 +755,6 @@ nav {
 .navbar {
   width: 14.2857142857%;
   height: 100%;
-  padding: 10px 0;
 }
 .navbar i {
   font-size: 1.5rem;
@@ -787,28 +763,36 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  padding: 10px 15px;
+  padding: 20px 15px;
   font-size: 1.125rem;
 }
 
 .navbar:hover .dropdown {
   display: grid;
 }
-
-.dropdown::before {
-  content: "";
+.navbar:hover .triangle {
   position: relative;
-  transform: translateX(-50%) rotate(180deg);
+}
+.navbar:hover .triangle::after {
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 70px 30px 70px;
-  z-index: 3;
+  border-width: 38px 70.14px 0 70.14px;
+  z-index: 10;
+  top: 119px;
+  left: 70px;
 }
 @media (min-width: 1260px) {
-  .dropdown::before {
-    border-width: 0 89.25px 30px 89.25px;
+  .navbar:hover .triangle::after {
+    border-width: 38px 89.28px 0 89.28px;
+    top: 101px;
+    left: 90px;
   }
 }
 
@@ -817,14 +801,14 @@ nav {
   height: auto;
   display: none;
   position: absolute;
-  top: 220px;
+  top: 243px;
   left: 0;
   z-index: 3;
   padding: 20px 10px 40px;
 }
 @media (min-width: 1260px) {
   .dropdown {
-    top: 210px;
+    top: 225px;
   }
 }
 .dropdown a {
@@ -845,7 +829,7 @@ nav {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, #000 20%, transparent 50%, transparent 100%);
+    background: linear-gradient(to right, #000 0, transparent 85%);
     z-index: 2;
   }
 }
@@ -985,7 +969,6 @@ h1 {
 .imageline {
   display: flex;
   align-items: center;
-  margin-top: 40px;
 }
 .imageline img {
   filter: grayscale(100%);
@@ -1180,6 +1163,9 @@ strong {
 .avatar {
   padding-right: 20px;
 }
+.avatar img {
+  border-radius: 50%;
+}
 
 .details p {
   margin: 5px;
@@ -1293,7 +1279,7 @@ footer .footer__row .footer__menu h4 {
   padding: 0 5px;
   margin: auto 0 0 0;
   background-color: #999ba3;
-  border-radius: 0 8px;
+  border-radius: 0 8px 0 0;
 }
 .footer__fixed a:hover {
   background-color: rgb(126.1855670103, 128.7113402062, 138.8144329897);

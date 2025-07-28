@@ -60,14 +60,18 @@ $colors-logo: (
 
     //DROPDOWN TRIANGLE
 
-    .dropdown__item--#{$i}::before {
-        border-color: transparent transparent nth($colors-logo, $i) transparent;
-        top: -68%;
-        left: calc(50vw + (140px * #{$i}) - 580px); 
+    // .dropdown__item--#{$i}::before {
+    //     border-color: transparent transparent nth($colors-logo, $i) transparent;
+    //     top: -68%;
+    //     left: calc(50vw + (140px * #{$i}) - 580px); 
         
-        @include mq(lg) {
-            left: calc(50vw + (178.5px * #{$i}) - 730px);
-        }
+    //     @include mq(lg) {
+    //         left: calc(50vw + (178.5px * #{$i}) - 730px);
+    //     }
+    // }
+
+    .triangle--#{$i}::after {
+        border-color: nth($colors-logo, $i) transparent transparent transparent;
     }
 }
 

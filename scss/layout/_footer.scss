@@ -72,7 +72,7 @@ footer {
     a {
         @include spacing(0 5px, auto 0 0 0);
         background-color: $button--grey;
-        border-radius: 0 8px;
+        border-radius: 0 8px 0 0;
 
         &:hover {
             background-color: $button--grey__dark;

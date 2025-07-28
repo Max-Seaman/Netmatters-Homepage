@@ -48,6 +48,7 @@ main {
     // NEWS CARDS CONTAINER
     &__news {
         padding: 0;
+        margin-bottom: 30px;
         transition: transform .5s ease;
 
         &:hover {
