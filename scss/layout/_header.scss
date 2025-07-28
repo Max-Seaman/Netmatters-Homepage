@@ -96,7 +96,7 @@
             border: 1px solid $lightgrey;
 
             &:focus {
-                border-color: #5bbfde;
+                border-color: $searchfocus;
                 box-shadow: 0 0 5px 3px rgba(91, 191, 222, 0.2);
             }
         }
