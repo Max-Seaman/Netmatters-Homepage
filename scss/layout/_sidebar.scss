@@ -1,0 +1,96 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 275px;
+    height: 100%;
+    background-color: $primary--background;
+    overflow: auto;
+    z-index: 1000;
+    text-transform: uppercase;
+
+    @include mq(md) {
+        width: 350px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+
+        li {
+            width: 100%;
+    
+            a {
+                display: block;
+                border-radius: 3px;
+                padding: 15px 20px;
+                border: 1px solid rgba($white, 0.1);
+                outline: 1px solid rgba(0, 0, 0, 0.25);
+                
+
+                i {
+                    font-size: px-to-rem(8);
+                    padding-right: 15px;
+                    margin-bottom: 5px;
+                }
+            }
+            
+            .sidebar__dropdown {
+                
+                li {
+                    background-color: #252733;
+                    padding: 0;
+
+                    a {
+                        font-size: px-to-rem(14);
+                        border: none;
+                        border-top: 1px solid rgba(225, 225, 225, 0.05);
+                    }
+
+                    &:hover > a {
+                        background-color: inherit;
+                    }
+                }
+            }
+
+            &:hover > a {
+                background-color: $primary--background__light;
+            }
+        }
+    }
+
+    .only-sm {
+    padding: 20px;
+    margin-top: -20px;
+
+        li {
+            text-align: center;
+            padding-top: 20px;
+
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 18px 0;
+                font-size: px-to-rem(18);
+                line-height: 1.5;
+
+                i {
+                    font-size: px-to-rem(23);
+                    @include spacing(0, 0);
+                }
+            }
+
+            .sidebar__dropdown {
+                margin-top: 20px;
+
+                a {
+                    padding: 10px;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
