@@ -5,7 +5,24 @@ html, body {
 }
 
 main {
-    margin: 0 auto;
+    position: relative;
+    transition: transform 0.5s ease , filter 0.3s ease;
+    background-color: $white;
+    z-index: 10;
+
+    &.sidebar-open {
+        transform: translateX(-275px);
+        filter: brightness(0.6);
+        pointer-events: auto; // Only allow the click in the main to close the sidebar
+
+        * {
+            pointer-events: none; // disables interaction with all elements
+        }
+
+        @include mq(md) {
+            transform: translateX(-350px);
+        }
+    }
 }
 
 * {

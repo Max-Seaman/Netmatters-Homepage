@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/fonts2.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="javascript/slick/slick.css">
+        <link rel="stylesheet" href="javascript/slick/slick-theme.css">
     </head>
 
     <body>
@@ -26,10 +28,10 @@
                         <button type="button" class="contact btn"><i class="icon icon-plane"></i>Contact</button>
                         <form class="search search-1">
                             <input type="text" class="hidden-m" placeholder="Search...">
-                            <button type="submit" class="btn btn-search" title="search"><i class="icon icon-search"></i></button>
+                            <button type="submit" class="btn btn-search"><i class="icon icon-search"></i></button>
                         </form>
-                        <button type="button" class="btn phone" title="call"><i class=" phone icon icon-phonetalk"></i></button>
-                        <button type="button" class="btn menu" title="menu">
+                        <button type="button" class="btn phone"><i class=" phone icon icon-phonetalk"></i></button>
+                        <button type="button" class="btn menu">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -37,134 +39,185 @@
                     </div>
                     <form class="search search-2">
                         <input type="text" placeholder="Search...">
-                        <button type="submit" title="search"><i class="icon icon-search"></i></button>
+                        <button type="submit"><i class="icon icon-search"></i></button>
                     </form>
                 </div>
+            </header>
 
         <!-- ==========================================================================
                                         | NAVBAR & DROPDOWN |
                 ========================================================================== -->
 
-                <nav>
-                    <ul class="container container__ul">
-                        <li class="navbar navbar__item--1">
-                            <a href="#" class="triangle triangle--1"><i class="icon icon-consultancy navicon-1"></i><small>Consultancy</small> &amp; Development</a>
-                            <div class="dropdown dropdown__item--1">
-                                <div class="container container__dropdown">
-                                    <h1>Our Consultancy &amp; Development Services</h1>
-                                    <a href="#"><i class="icon icon-cogs"></i><span>Bespoke CRM</span></a>
-                                    <a href="#"><i class="icon icon-briefcase"></i><span>Business Automation</span></a>
-                                    <a href="#"><i class="icon icon-shuffle"></i><span>Software Integrations</span></a>
-                                    <a href="#"><i class="icon icon-mobile"></i><span>Mobile App Development</span></a>
-                                    <a href="#"><i class="icon icon-folder"></i><span>Bespoke Databases</span></a>
-                                    <a href="#"><i class="icon icon-transfer"></i><span>Sharepoint Development</span></a>
-                                    <a href="#"><i class="icon icon-download"></i><span>Operational Systems</span></a>
-                                    <a href="#"><i class="icon icon-group"></i><span>Business Central Implementation</span></a>
-                                    <a href="#"><i class="icon icon-laptop"></i><span>Internet of Things (IoT) Software</span></a>
-                                    <a href="#"><i class="icon icon-cloud"></i><span>Intranet Development</span></a>
-                                    <a href="#"><i class="icon icon-cloud-download"></i><span>Customer Portal Development</span></a>
-                                    <a href="#"><i class="icon icon-globe"></i><span>Reporting Hub</span></a>
-                                    <a href="#"><i class="icon icon-handshake"></i><span>SAP S/4HANA Management</span></a>
-                                </div>
+            <nav>
+                <ul class="container container__ul">
+                    <li class="navbar navbar__item--1">
+                        <a href="#" class="triangle triangle--1"><i class="icon icon-consultancy navicon-1"></i><small>Consultancy</small> &amp; Development</a>
+                        <div class="dropdown dropdown__item--1">
+                            <div class="container container__dropdown">
+                                <h1>Our Consultancy &amp; Development Services</h1>
+                                <a href="#"><i class="icon icon-cogs"></i><span>Bespoke CRM</span></a>
+                                <a href="#"><i class="icon icon-briefcase"></i><span>Business Automation</span></a>
+                                <a href="#"><i class="icon icon-shuffle"></i><span>Software Integrations</span></a>
+                                <a href="#"><i class="icon icon-mobile"></i><span>Mobile App Development</span></a>
+                                <a href="#"><i class="icon icon-folder"></i><span>Bespoke Databases</span></a>
+                                <a href="#"><i class="icon icon-transfer"></i><span>Sharepoint Development</span></a>
+                                <a href="#"><i class="icon icon-download"></i><span>Operational Systems</span></a>
+                                <a href="#"><i class="icon icon-group"></i><span>Business Central Implementation</span></a>
+                                <a href="#"><i class="icon icon-laptop"></i><span>Internet of Things (IoT) Software</span></a>
+                                <a href="#"><i class="icon icon-cloud"></i><span>Intranet Development</span></a>
+                                <a href="#"><i class="icon icon-cloud-download"></i><span>Customer Portal Development</span></a>
+                                <a href="#"><i class="icon icon-globe"></i><span>Reporting Hub</span></a>
+                                <a href="#"><i class="icon icon-handshake"></i><span>SAP S/4HANA Management</span></a>
                             </div>
-                        </li>
-                        <li class="navbar navbar__item--2">
-                            <a href="#" class="triangle triangle--2"><i class="icon icon-display navicon-2"></i><small>IT</small> Support</a>
-                            <div class="dropdown dropdown__item--2">
-                                <div class="container container__dropdown">
-                                    <h1>Our IT Support Services</h1>
-                                    <a href="#"><i class="icon icon-headphones"></i><span>Managed IT Support</span></a>
-                                    <a href="#"><i class="icon icon-briefcase"></i><span>Business IT Support</span></a>
-                                    <a href="#"><i class="icon icon-laptop"></i><span>Office 365 for Business</span></a>
-                                    <a href="#"><i class="icon icon-developer"></i><span>IT Consultancy</span></a>
-                                    <a href="#"><i class="icon icon-cloud"></i><span>Cloud Service Provider</span></a>
-                                    <a href="#"><i class="icon icon-hdd"></i><span>Data Backup &amp; Disaster Recovery</span></a>
-                                </div>
+                        </div>
+                    </li>
+                    <li class="navbar navbar__item--2">
+                        <a href="#" class="triangle triangle--2"><i class="icon icon-display navicon-2"></i><small>IT</small> Support</a>
+                        <div class="dropdown dropdown__item--2">
+                            <div class="container container__dropdown">
+                                <h1>Our IT Support Services</h1>
+                                <a href="#"><i class="icon icon-headphones"></i><span>Managed IT Support</span></a>
+                                <a href="#"><i class="icon icon-briefcase"></i><span>Business IT Support</span></a>
+                                <a href="#"><i class="icon icon-laptop"></i><span>Office 365 for Business</span></a>
+                                <a href="#"><i class="icon icon-developer"></i><span>IT Consultancy</span></a>
+                                <a href="#"><i class="icon icon-cloud"></i><span>Cloud Service Provider</span></a>
+                                <a href="#"><i class="icon icon-hdd"></i><span>Data Backup &amp; Disaster Recovery</span></a>
                             </div>
-                        </li>
-                        <li class="navbar navbar__item--3">
-                            <a href="#" class=" triangle triangle--3"><i class="icon icon-bar navicon-3"></i><small>Digital</small> Marketing</a>
-                            <div class="dropdown dropdown__item--3">
-                                <div class="container container__dropdown">
-                                    <h1>Our Digital Marketing Services</h1>
-                                    <a href="#"><i class="icon icon-search"></i><span>Search Engine Optimisation (SEO)</span></a>
-                                    <a href="#"><i class="icon icon-money"></i><span>Pay Per Click Advertising (PPC)</span></a>
-                                    <a href="#"><i class="icon icon-stocks"></i><span>Conversion Rate Optimisation (CRO)</span></a>
-                                    <a href="#"><i class="icon icon-mail"></i><span>Email Marketing</span></a>
-                                    <a href="#"><i class="icon icon-group"></i><span>Social Media Marketing</span></a>
-                                    <a href="#"><i class="icon icon-pencil"></i><span>Content Marketing</span></a>
-                                </div>
+                        </div>
+                    </li>
+                    <li class="navbar navbar__item--3">
+                        <a href="#" class=" triangle triangle--3"><i class="icon icon-bar navicon-3"></i><small>Digital</small> Marketing</a>
+                        <div class="dropdown dropdown__item--3">
+                            <div class="container container__dropdown">
+                                <h1>Our Digital Marketing Services</h1>
+                                <a href="#"><i class="icon icon-search"></i><span>Search Engine Optimisation (SEO)</span></a>
+                                <a href="#"><i class="icon icon-money"></i><span>Pay Per Click Advertising (PPC)</span></a>
+                                <a href="#"><i class="icon icon-stocks"></i><span>Conversion Rate Optimisation (CRO)</span></a>
+                                <a href="#"><i class="icon icon-mail"></i><span>Email Marketing</span></a>
+                                <a href="#"><i class="icon icon-group"></i><span>Social Media Marketing</span></a>
+                                <a href="#"><i class="icon icon-pencil"></i><span>Content Marketing</span></a>
                             </div>
-                        </li>
-                        <li class="navbar navbar__item--4">
-                            <a href="#" class=" triangle triangle--4"><i class="icon icon-phonetalk navicon-4"></i><small>Telecoms</small> Services</a>
-                            <div class="dropdown dropdown__item--4">
-                                <div class="container container__dropdown">
-                                    <h1>Our Telecoms Services</h1>
-                                    <a href="#"><i class="icon icon-ticket"></i><span>Business Mobile</span></a>
-                                    <a href="#"><i class="icon icon-phone"></i><span>Phone System Health Check</span></a>
-                                    <a href="#"><i class="icon icon-phone-square"></i><span>Business Phone Systems</span></a>
-                                    <a href="#"><i class="icon icon-dashboard"></i><span>Business Connectivity</span></a>
-                                    <a href="#"><i class="icon icon-handshake"></i><span>Telecoms Bill Review</span></a>
-                                    <a href="#"><i class="icon icon-phonetalk"></i><span>3CX Systems</span></a>
-                                </div>
+                        </div>
+                    </li>
+                    <li class="navbar navbar__item--4">
+                        <a href="#" class=" triangle triangle--4"><i class="icon icon-phonetalk navicon-4"></i><small>Telecoms</small> Services</a>
+                        <div class="dropdown dropdown__item--4">
+                            <div class="container container__dropdown">
+                                <h1>Our Telecoms Services</h1>
+                                <a href="#"><i class="icon icon-ticket"></i><span>Business Mobile</span></a>
+                                <a href="#"><i class="icon icon-phone"></i><span>Phone System Health Check</span></a>
+                                <a href="#"><i class="icon icon-phone-square"></i><span>Business Phone Systems</span></a>
+                                <a href="#"><i class="icon icon-dashboard"></i><span>Business Connectivity</span></a>
+                                <a href="#"><i class="icon icon-handshake"></i><span>Telecoms Bill Review</span></a>
+                                <a href="#"><i class="icon icon-phonetalk"></i><span>3CX Systems</span></a>
                             </div>
-                        </li>
-                        <li class="navbar navbar__item--5">
-                            <a href="#" class="triangle triangle--5"><i class="icon icon-web navicon-5"></i><small>Web</small> Design</a>
-                            <div class="dropdown dropdown__item--5">
-                                <div class="container container__dropdown">
-                                    <h1>Our Web Design Services</h1>
-                                    <a href="#"><i class="icon icon-pencil"></i><span>Bespoke Website Design</span></a>
-                                    <a href="#"><i class="icon icon-cart"></i><span>eCommerce Website Design</span></a>
-                                    <a href="#"><i class="icon icon-monitor"></i><span>Pay Monthly Websites</span></a>
-                                    <a href="#"><i class="icon icon-megaphone"></i><span>Branding &amp; Design</span></a>
-                                    <a href="#"><i class="icon icon-mobile"></i><span>Mobile App Development</span></a>
-                                    <a href="#"><i class="icon icon-cloudsmall"></i><span>Web Hosting</span></a>
-                                </div>
+                        </div>
+                    </li>
+                    <li class="navbar navbar__item--5">
+                        <a href="#" class="triangle triangle--5"><i class="icon icon-web navicon-5"></i><small>Web</small> Design</a>
+                        <div class="dropdown dropdown__item--5">
+                            <div class="container container__dropdown">
+                                <h1>Our Web Design Services</h1>
+                                <a href="#"><i class="icon icon-pencil"></i><span>Bespoke Website Design</span></a>
+                                <a href="#"><i class="icon icon-cart"></i><span>eCommerce Website Design</span></a>
+                                <a href="#"><i class="icon icon-monitor"></i><span>Pay Monthly Websites</span></a>
+                                <a href="#"><i class="icon icon-megaphone"></i><span>Branding &amp; Design</span></a>
+                                <a href="#"><i class="icon icon-mobile"></i><span>Mobile App Development</span></a>
+                                <a href="#"><i class="icon icon-cloudsmall"></i><span>Web Hosting</span></a>
                             </div>
-                        </li>
-                        <li class="navbar navbar__item--6">
-                            <a href="#" class="triangle triangle--6"><i class="icon icon-security navicon-6"></i><small>Cyber</small> Security</a>
-                            <div class="dropdown dropdown__item--6">
-                                <div class="container container__dropdown">
-                                    <h1>Our Cyber Security Services</h1>
-                                    <a href="#"><i class="icon icon-file"></i><span>Cyber Security Assessment</span></a>
-                                    <a href="#"><i class="icon icon-clock"></i><span>Cyber Security Management</span></a>
-                                    <a href="#"><i class="icon icon-flask"></i><span>Cyber Penetration Testing</span></a>
-                                    <a href="#"><i class="icon icon-developer"></i><span>Cyber Essentials Certification</span></a>
-                                    <a href="#"><i class="icon icon-security"></i><span>PCI Compliance</span></a>
-                                    <a href="#"><i class="icon icon-lock"></i><span>Hacking Prevention</span></a>
-                                </div>
+                        </div>
+                    </li>
+                    <li class="navbar navbar__item--6">
+                        <a href="#" class="triangle triangle--6"><i class="icon icon-security navicon-6"></i><small>Cyber</small> Security</a>
+                        <div class="dropdown dropdown__item--6">
+                            <div class="container container__dropdown">
+                                <h1>Our Cyber Security Services</h1>
+                                <a href="#"><i class="icon icon-file"></i><span>Cyber Security Assessment</span></a>
+                                <a href="#"><i class="icon icon-clock"></i><span>Cyber Security Management</span></a>
+                                <a href="#"><i class="icon icon-flask"></i><span>Cyber Penetration Testing</span></a>
+                                <a href="#"><i class="icon icon-developer"></i><span>Cyber Essentials Certification</span></a>
+                                <a href="#"><i class="icon icon-security"></i><span>PCI Compliance</span></a>
+                                <a href="#"><i class="icon icon-lock"></i><span>Hacking Prevention</span></a>
                             </div>
-                        </li>
-                        <li class="navbar navbar__item--7">
-                            <a href="#" class="triangle triangle--7"><i class="icon icon-developer navicon-7"></i><small>Developer</small> Course</a>
-                            <div class="dropdown dropdown__item--7">
-                                <div class="container container__dropdown">
-                                    <h1>Our Developer Course Services</h1>
-                                    <a href="#"><i class="icon icon-laptop"></i><span>Train For A Career in Tech</span></a>
-                                    <a href="#"><i class="icon icon-web"></i><span>Skills Bootcamp</span></a>
-                                    <a href="#"><i class="icon icon-question"></i><span>Scion Scheme Frequently Asked Questions</span></a>
-                                    <a href="#"><i class="icon icon-handshake"></i><span>Scion Collaborators</span></a>
-                                </div>
+                        </div>
+                    </li>
+                    <li class="navbar navbar__item--7">
+                        <a href="#" class="triangle triangle--7"><i class="icon icon-developer navicon-7"></i><small>Developer</small> Course</a>
+                        <div class="dropdown dropdown__item--7">
+                            <div class="container container__dropdown">
+                                <h1>Our Developer Course Services</h1>
+                                <a href="#"><i class="icon icon-laptop"></i><span>Train For A Career in Tech</span></a>
+                                <a href="#"><i class="icon icon-web"></i><span>Skills Bootcamp</span></a>
+                                <a href="#"><i class="icon icon-question"></i><span>Scion Scheme Frequently Asked Questions</span></a>
+                                <a href="#"><i class="icon icon-handshake"></i><span>Scion Collaborators</span></a>
                             </div>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
 
             <!-- ==========================================================================
-                                            | HERO IMAGE |
+                                            | HERO IMAGES |
                 ========================================================================== -->
 
-            <div class="container">
-                <div class="hero">
-                    <img src="img/hero.png" alt="Netmatters Building"> 
-                    <div class="container hero__txt">
-                        <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
-                        <h2>Performance-driven digital and technology services with complete transparency</h2>
-                        <span class="btn btn-5 hover-btn-5 hero__btn">Why Choose Us? <i class="icon icon-arrow"></i></span>
+            <div class="hero">             
+                <div class="slick">
+                    <div class="slide">
+                        <img src="img/hero.png" alt="Netmatters Building"> 
+                        <div class="container hero__txt">
+                            <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
+                            <h2>Performance-driven digital and technology services with complete transparency</h2>
+                            <span class="btn btn-5 hover-btn-5 hero__btn">Why Choose Us? <i class="icon icon-arrow"></i></span>
+                        </div>
+                    </div>
+                
+                    <div class="slide">
+                        <img src="img/hero2.png" alt="Netmatters Building"> 
+                        <div class="container hero__txt">
+                            <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
+                            <h2>Performance-driven digital and technology services with complete transparency</h2>
+                            <span class="btn btn-1 hover-btn-1 hero__btn">Find Out More <i class="icon icon-arrow"></i></span>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/hero3.png" alt="Netmatters Building"> 
+                        <div class="container hero__txt">
+                            <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
+                            <h2>Performance-driven digital and technology services with complete transparency</h2>
+                            <span class="btn btn-2 hover-btn-2 hero__btn">Find Out More <i class="icon icon-arrow"></i></span>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/hero4.png" alt="Netmatters Building"> 
+                        <div class="container hero__txt">
+                            <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
+                            <h2>Performance-driven digital and technology services with complete transparency</h2>
+                            <span class="btn btn-3 hover-btn-3 hero__btn">Find Out More <i class="icon icon-arrow"></i></span>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/hero5.png" alt="Netmatters Building"> 
+                        <div class="container hero__txt">
+                            <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
+                            <h2>Performance-driven digital and technology services with complete transparency</h2>
+                            <span class="btn btn-4 hover-btn-4 hero__btn">Find Out More <i class="icon icon-arrow"></i></span>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/hero6.png" alt="Netmatters Building"> 
+                        <div class="container hero__txt">
+                            <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
+                            <h2>Performance-driven digital and technology services with complete transparency</h2>
+                            <span class="btn btn-5 hover-btn-5 hero__btn">Find Out More <i class="icon icon-arrow"></i></span>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/hero7.png" alt="Netmatters Building"> 
+                        <div class="container hero__txt">
+                            <h1 class="title">The East Of England&apos;s Leading Technology Company</h1>
+                            <h2>Performance-driven digital and technology services with complete transparency</h2>
+                            <span class="btn btn-6 hover-btn-6 hero__btn">Find Out More <i class="icon icon-arrow"></i></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -480,10 +533,10 @@
                             </div>
                         <h4>Follow Us On:</h4>
                             <div class="social-icons">
-                                <a href="#" class="icon-footer-facebook" title="facebook link"><i class="icon icon-facebook"></i></a>
-                                <a href="#" class="icon-footer-linkedin" title="linkedin link"><i class="icon icon-linkedin"></i></a>
-                                <a href="#" class="icon-footer-x" title="x link"><i class="icon icon-x"></i></a>
-                                <a href="#" class="icon-footer-instagram" title="instagram link"><i class="icon icon-instagram"></i></a>
+                                <a href="#" class="icon-footer-facebook"><i class="icon icon-facebook"></i></a>
+                                <a href="#" class="icon-footer-linkedin"><i class="icon icon-linkedin"></i></a>
+                                <a href="#" class="icon-footer-x"><i class="icon icon-x"></i></a>
+                                <a href="#" class="icon-footer-instagram"><i class="icon icon-instagram"></i></a>
                             </div>
                         </div>
                         <div class="footer__row">
@@ -709,10 +762,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="only-sm">Support</a>
+                    <a href="#" id="support-sidebar" class="only-sm">Support</a>
                 </li>
             </ul>
         </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="javascript/slick/slick.min.js"></script>
+        <script src="javascript/sidebar.js"></script>
+        <script src="javascript/carousel.js"></script>
     </body>
-
 </html>

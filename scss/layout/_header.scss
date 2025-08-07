@@ -46,14 +46,62 @@
 
 
     .menu {
-        @include flex(column, null, space-between);
         @include size(63px, 55px);
         padding: 15px;
         background-color: $primary--background;
+        position: relative;
 
         span {
-            @include size(100%, 4px);
+            position: absolute;
+            left: 16.5px;
+            width: 30px;
+            height: 4px;
+            margin-top: 15px;
             background-color: $white;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        span:nth-child(1) {
+            top: 0;
+        }
+
+        span:nth-child(2) {
+            top: 10px;
+        }
+
+        span:nth-child(3) {
+            top: 20px;
+        }
+
+        //Step 1 : Collapse in the center
+        &.collapse span:nth-child(1),
+        &.collapse span:nth-child(3) {
+            top: 10px;            // move to middle
+            transform: scaleX(0); // shrink
+        }
+
+        //Step 2 : Rotate the middle one
+        &.rotate span {
+            transform: rotate(180deg);
+        }
+
+        //Step 3 : Form the X
+        &.open span {
+            transition: all 0.3s ease;
+            top: 10px;
+        }
+
+        &.open span:nth-child(1) {
+            transform: rotate(135deg);
+        }
+
+        &.open span:nth-child(2) {
+            transform: rotate(225deg);
+        }
+
+        &.open span:nth-child(3) {
+            display: none;
         }
 
         &:hover {

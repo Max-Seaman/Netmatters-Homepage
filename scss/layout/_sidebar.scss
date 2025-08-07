@@ -5,8 +5,8 @@
     width: 275px;
     height: 100%;
     background-color: $primary--background;
-    overflow: auto;
-    z-index: 1000;
+    z-index: 0;
+    overflow-y: auto;
     text-transform: uppercase;
 
     @include mq(md) {
@@ -61,8 +61,12 @@
     }
 
     .only-sm {
-    padding: 20px;
-    margin-top: -20px;
+        padding: 20px;
+        margin-top: -20px;
+
+        @include mq(md) {
+            display: none;
+        }
 
         li {
             text-align: center;
@@ -92,5 +96,15 @@
             }
         }
     }
+
+    #support-sidebar {
+        padding: 15px 20px;
+        margin-top: 0;
+
+        @include mq(md) {
+            display: none;
+        }
+    }
 }
+
 

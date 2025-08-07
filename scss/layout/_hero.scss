@@ -15,11 +15,22 @@
 }
 
 //MAIN CONTAINER
-
 .hero {
-    @include flex(null, center, null, null);
-    @include size(100vw, 550px);
+    width: 100%;
     position: relative;
+    overflow: hidden;
+
+    .slick {
+        @include flex(row, center, center);
+        width: 100% !important;
+        height: 100%;
+
+        .slide {
+            @include flex(column, center, center);
+            @include size(100%, 550px);
+            position: relative;
+        }
+    }
 }
 
 //IMAGE
@@ -29,18 +40,19 @@
     position: absolute;
     object-fit: cover;
     filter: brightness(50%);
+    
 
     @include mq(md) {
       filter: none;
     }
-  }
+}
 
 //TEXT AND BUTTON ON IMAGE
 
 .hero__txt {
     color: $white;
     text-align: center;
-    z-index: 2;
+    z-index: 9;
     line-height: 1.2;
 
     @include mq(md) {
