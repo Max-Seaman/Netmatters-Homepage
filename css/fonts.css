@@ -24,29 +24,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-menu:before {
-  content: "\e90c";
-}
-.icon-question:before {
-  content: "\e901";
-}
-.icon-cloudsmall:before {
-  content: "\e928";
-}
-.icon-consultancy:before {
-  content: "\e908";
-}
-.icon-bar:before {
-  content: "\e900";
+.icon-transfer:before {
+  content: "\e907";
 }
 .icon-monitor:before {
-  content: "\e909";
+  content: "\e90b";
 }
 .icon-pencil:before {
   content: "\e90a";
-}
-.icon-transfer:before {
-  content: "\e90b";
 }
 .icon-headphones:before {
   content: "\e910";
@@ -66,9 +51,6 @@
 .icon-download:before {
   content: "\e9c7";
 }
-.icon-star:before {
-  content: "\e9d9";
-}
 .icon-arrow:before {
   content: "\ea3c";
 }
@@ -85,93 +67,110 @@
   content: "\eaca";
 }
 .icon-mobile:before {
-  content: "\e912";
-}
-.icon-clock:before {
-  content: "\e913";
-}
-.icon-lock:before {
-  content: "\e914";
-}
-.icon-flask:before {
-  content: "\e915";
-}
-.icon-megaphone:before {
-  content: "\e916";
-}
-.icon-hdd:before {
-  content: "\e917";
-}
-.icon-dashboard:before {
-  content: "\e918";
-}
-.icon-phone-square:before {
-  content: "\e919";
-}
-.icon-ticket:before {
-  content: "\e91a";
-}
-.icon-money:before {
-  content: "\e91b";
-}
-.icon-mail:before {
-  content: "\e91c";
-}
-.icon-globe:before {
-  content: "\e91d";
-}
-.icon-laptop:before {
-  content: "\e91e";
-}
-.icon-cogs:before {
-  content: "\e920";
-}
-.icon-shuffle:before {
-  content: "\e921";
-}
-.icon-group:before {
-  content: "\e922";
-}
-.icon-briefcase:before {
-  content: "\e923";
-}
-.icon-handshake:before {
-  content: "\e924";
-}
-.icon-cloud-download:before {
-  content: "\e925";
-}
-.icon-cloud:before {
-  content: "\e926";
-}
-.icon-x:before {
-  content: "\e902";
-}
-.icon-plane:before {
-  content: "\e903";
+  content: "\e906";
 }
 .icon-file:before {
   content: "\e90d";
 }
+.icon-mouse:before {
+  content: "\e912";
+}
 .icon-cart:before {
-  content: "\e90e";
+  content: "\e90c";
 }
 .icon-phonetalk:before {
-  content: "\e90f";
-}
-.icon-stocks:before {
-  content: "\e911";
-}
-.icon-developer:before {
-  content: "\e904";
-}
-.icon-security:before {
   content: "\e905";
 }
+.icon-developer:before {
+  content: "\e908";
+}
+.icon-stocks:before {
+  content: "\e909";
+}
+.icon-double_arrow:before {
+  content: "\e900";
+}
+.icon-security:before {
+  content: "\e90e";
+}
 .icon-comment:before {
-  content: "\e906";
+  content: "\e913";
 }
-.icon-mouse:before {
-  content: "\e907";
+.icon-star:before {
+  content: "\f005";
 }
-
+.icon-clock:before {
+  content: "\f017";
+}
+.icon-lock:before {
+  content: "\f023";
+}
+.icon-shuffle:before {
+  content: "\f074";
+}
+.icon-phone-square:before {
+  content: "\f098";
+}
+.icon-hdd:before {
+  content: "\f0a0";
+}
+.icon-megaphone:before {
+  content: "\f0a1";
+}
+.icon-globe:before {
+  content: "\f0ac";
+}
+.icon-briefcase:before {
+  content: "\f0b1";
+}
+.icon-group:before {
+  content: "\f0c0";
+}
+.icon-cloud:before {
+  content: "\f0c2";
+}
+.icon-flask:before {
+  content: "\f0c3";
+}
+.icon-money:before {
+  content: "\f0d6";
+}
+.icon-dashboard:before {
+  content: "\f0e4";
+}
+.icon-cloud-download:before {
+  content: "\f0ed";
+}
+.icon-laptop:before {
+  content: "\f109";
+}
+.icon-ticket:before {
+  content: "\f145";
+}
+.icon-handshake:before {
+  content: "\f2b5";
+}
+.icon-mail:before {
+  content: "\e91c";
+}
+.icon-cogs:before {
+  content: "\e920";
+}
+.icon-cloudsmall:before {
+  content: "\e901";
+}
+.icon-bar:before {
+  content: "\e902";
+}
+.icon-help-with-circle:before {
+  content: "\e903";
+}
+.icon-consultancy:before {
+  content: "\e904";
+}
+.icon-plane:before {
+  content: "\e911";
+}
+.icon-x:before {
+  content: "\e90f";
+}

@@ -1,7 +1,7 @@
 //BLACK FADED FILTER
 
 @include mq(md) {
-  .hero::before {
+  .slide::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -10,7 +10,8 @@
         $black 0,         
         transparent 85%    
       );
-      z-index: 2;
+      z-index: 1;
+      pointer-events: none;
     } 
 }
 
@@ -24,6 +25,7 @@
         @include flex(row, center, center);
         width: 100% !important;
         height: 100%;
+        position: relative;
 
         .slide {
             @include flex(column, center, center);
@@ -35,7 +37,7 @@
 
 //IMAGE
 
-.hero img {
+.slide img {
     @include size(100%, 100%);
     position: absolute;
     object-fit: cover;
@@ -78,7 +80,12 @@
         @media (min-width: 992px) {
             @include size(750px, auto);
             font-size: px-to-rem(26);
+            line-height: 1.5;
         }
+    }
+
+    .smaller {
+        width: 575px;
     }
 }
 

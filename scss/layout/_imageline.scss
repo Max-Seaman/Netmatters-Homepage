@@ -1,29 +1,30 @@
-//MAIN CONTAINER
+//MAIN & IMAGE CONTAINER (INC. IMAGES)
 
 .imageline {
     @include flex(null, center, null, null);
-    overflow: hidden;
     
+    .slick-list {
+        overflow: visible !important
+    }
+    
+    .image-card {
+        @include flex(null, center, center, null);
+        position: relative;
+    }
+
+        
     img {
         filter: grayscale(100%);
-        margin: 60px 45px 40px;
+        margin: 60px 35px 40px;
         max-height: 80px;
-        max-width: 200px;
+        max-width: 300px;
+        padding-left: 20px;
         
         &:hover {
             filter: none;
         }
     }
-
 } 
-
-//IMAGE CONTAINER 
-
-.image-card {
-    @include flex(null, center, null, null);
-    position: relative;
-    @include size(auto, 180px);
-}
 
 //TEXT CARD
 
@@ -34,7 +35,7 @@
     bottom: 80%;
     transform: translate(-50%, -50px);
     @include size(300px, auto); 
-    background-color: $primary--background;
+    background-color: $primary--background ;
     color: $white;
     padding: 20px;
     text-align: center;

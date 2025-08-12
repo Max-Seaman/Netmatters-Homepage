@@ -1,20 +1,45 @@
 "use strict";
 
-var menu = document.querySelector(".menu");
-var spans = menu.querySelectorAll("span");
+var originalMenu = document.querySelector(".menu");
 var mainContent = document.querySelector("main");
-var sidebar = document.querySelector(".sidebar");
-menu.addEventListener("click", function () {
+var imageline = document.querySelectorAll(".imageline");
+var cloneHeader = document.querySelector(".fixed-clone");
+
+function disablePointerEventsInside(container) {
+  var allDescendants = container.querySelectorAll('*');
+  allDescendants.forEach(function (i) {
+    i.style.pointerEvents = 'none';
+  });
+}
+
+function enablePointerEventsInside(container) {
+  var allDescendants = container.querySelectorAll('*');
+  allDescendants.forEach(function (i) {
+    i.style.pointerEvents = '';
+  });
+}
+
+function menuAnimation(menu) {
   var menuIsOpen = menu.classList.contains("open");
 
   if (!menuIsOpen) {
-    // Slide main content
-    mainContent.classList.add("sidebar-open"); // Step 1: collapse top and bottom into center
+    // Slide main content and hide overflow
+    mainContent.classList.add("sidebar-open"); // Hide imageline overflow 
+
+    imageline.forEach(function (i) {
+      i.style.overflow = "hidden";
+    }); // Disable pointer events
+
+    disablePointerEventsInside(mainContent);
+
+    if (cloneHeader) {
+      disablePointerEventsInside(cloneHeader);
+    } // Step 1: collapse top and bottom into center
+
 
     menu.classList.add("collapse"); // Step 2: rotate center span
 
     setTimeout(function () {
-      // Step 2: rotate center span
       menu.classList.add("rotate");
     }, 100); // Step 3: form the X
 
@@ -39,12 +64,22 @@ menu.addEventListener("click", function () {
     setTimeout(function () {
       menu.classList.remove("collapse");
     }, 200);
+    setTimeout(function () {
+      // Set imageline overflow back when sidebar is closed
+      imageline.forEach(function (i) {
+        i.style.overflow = "";
+      }); // Enable pointer events when sidebar is closed
+
+      enablePointerEventsInside(mainContent);
+
+      if (cloneHeader) {
+        enablePointerEventsInside(cloneHeader);
+      }
+    }, 500);
   }
-});
-mainContent.addEventListener("click", function () {
-  if (menu.classList.contains("open")) {
-    // Close the menu (simulate a click on the menu icon)
-    menu.click();
-  }
+}
+
+originalMenu.addEventListener("click", function () {
+  menuAnimation(originalMenu);
 });
 //# sourceMappingURL=sidebar.dev.js.map

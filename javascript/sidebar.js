@@ -1,21 +1,46 @@
-const menu = document.querySelector(".menu");
-const spans = menu.querySelectorAll("span");
+const originalMenu = document.querySelector(".menu");
 const mainContent = document.querySelector("main");
-const sidebar = document.querySelector(".sidebar");
+const imageline = document.querySelectorAll(".imageline");
+const cloneHeader = document.querySelector(".fixed-clone");
 
-menu.addEventListener("click", () => {
+
+function disablePointerEventsInside(container) {
+    const allDescendants = container.querySelectorAll('*');
+    allDescendants.forEach(i => {
+        i.style.pointerEvents = 'none';
+    });
+}
+
+function enablePointerEventsInside(container) {
+    const allDescendants = container.querySelectorAll('*');
+    allDescendants.forEach(i => {
+        i.style.pointerEvents = '';
+    });
+}
+
+function menuAnimation(menu) {
     const menuIsOpen = menu.classList.contains("open");
 
     if (!menuIsOpen) {
-        // Slide main content
+        // Slide main content and hide overflow
         mainContent.classList.add("sidebar-open");
+
+        // Hide imageline overflow 
+        imageline.forEach(i => {
+            i.style.overflow = "hidden";
+        });
+
+        // Disable pointer events
+        disablePointerEventsInside(mainContent);
+        if (cloneHeader) {
+            disablePointerEventsInside(cloneHeader);
+        }
 
         // Step 1: collapse top and bottom into center
         menu.classList.add("collapse");
 
         // Step 2: rotate center span
         setTimeout(() => {
-            // Step 2: rotate center span
             menu.classList.add("rotate");
         }, 100); 
 
@@ -47,12 +72,22 @@ menu.addEventListener("click", () => {
         setTimeout(() => {
             menu.classList.remove("collapse");
         }, 200);
-    }
-});
 
-mainContent.addEventListener("click", () => {
-    if (menu.classList.contains("open")) {
-        // Close the menu (simulate a click on the menu icon)
-        menu.click();
+        setTimeout(() =>{
+            // Set imageline overflow back when sidebar is closed
+            imageline.forEach(i => {
+                i.style.overflow = "";
+            });
+
+            // Enable pointer events when sidebar is closed
+            enablePointerEventsInside(mainContent);
+            if (cloneHeader) {
+                enablePointerEventsInside(cloneHeader);
+            }
+        }, 500);
     }
+}
+
+originalMenu.addEventListener("click", () => {
+    menuAnimation(originalMenu);
 });

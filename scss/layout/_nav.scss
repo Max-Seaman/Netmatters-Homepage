@@ -67,13 +67,13 @@ nav {
     @include size(100%, auto);
     display: none;
     position: absolute;
-    top: 243px;
+    top: 239px;
     left: 0;
     z-index: 3;
     padding: 20px 10px 40px;
 
     @include mq(lg) {
-        top: 225px;
+        top: 221px;
     }
 
     a {
