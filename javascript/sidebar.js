@@ -1,6 +1,5 @@
-const originalMenu = document.querySelector(".menu");
+const menu = document.querySelector(".menu");
 const mainContent = document.querySelector(".main-content");
-const imageline = document.querySelectorAll(".imageline");
 
 
 function disablePointerEventsInside(container) {
@@ -23,11 +22,6 @@ function menuAnimation(menu) {
     if (!menuIsOpen) {
         // Slide main content and hide overflow
         mainContent.classList.add("sidebar-open");
-
-        // Hide imageline overflow 
-        imageline.forEach(i => {
-            i.style.overflow = "hidden";
-        });
 
         // Disable pointer events
         disablePointerEventsInside(mainContent);
@@ -70,11 +64,6 @@ function menuAnimation(menu) {
         }, 200);
 
         setTimeout(() =>{
-            // Set imageline overflow back when sidebar is closed
-            imageline.forEach(i => {
-                i.style.overflow = "";
-            });
-
             // Enable pointer events when sidebar is closed
             enablePointerEventsInside(mainContent);
             
@@ -82,13 +71,13 @@ function menuAnimation(menu) {
     }
 }
 
-originalMenu.addEventListener("click", () => {
-    menuAnimation(originalMenu);
+menu.addEventListener("click", () => {
+    menuAnimation(menu);
 });
 
 mainContent.addEventListener("click", () => {
-    if (originalMenu.classList.contains("open")) {
+    if (menu.classList.contains("open")) {
         // Close the menu (simulate a click on the menu icon)
-        originalMenu.click();
+        menu.click();
     }
 });

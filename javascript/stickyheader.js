@@ -1,18 +1,15 @@
-const header = document.querySelector(".sticky-header");
-const main = document.querySelector('.main-content')
+const header = $(".sticky-header");
 
 let lastScroll = 0;
 
-window.addEventListener("scroll", () => { 
-    // Get current scroll
-    const currentScroll = window.scrollY; 
+$(window).on("scroll", function() {
+    var currentScroll = $(this).scrollTop(); // get current scroll
     
-    if (currentScroll > lastScroll) { 
-        header.classList.add("fixed")
+    if (currentScroll < lastScroll) {
+        header.addClass("fixed");
     } else {
-        header.classList.remove("fixed")
+        header.removeClass("fixed");
     }
     
-    // update last known scroll position for next scroll event
-    lastScroll = currentScroll;
-})
+    lastScroll = currentScroll; // update last scroll
+});

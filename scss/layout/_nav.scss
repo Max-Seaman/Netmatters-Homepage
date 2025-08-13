@@ -49,12 +49,12 @@ nav {
             border-style: solid;
             border-width: 38px 70.14px 0 70.14px;
             z-index: 10;
-            top: 119px;
+            top: 115px;
             left: 70px;
 
             @include mq(lg) {
                 border-width: 38px 89.28px 0 89.28px;
-                top: 101px;
+                top: 97px;
                 left: 90px;
             }
         }

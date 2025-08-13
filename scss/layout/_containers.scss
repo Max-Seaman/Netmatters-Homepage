@@ -5,31 +5,44 @@ html, body {
 
 .main-content {
     position: relative;
-    background-color: $white;
-    z-index: 10;
+    z-index: 2;
+    background-color: #fff;
     transition: all 0.5s ease;
-    overflow: hidden;
-    
+    overflow-x: clip;
+
     &.sidebar-open {
         transform: translateX(-275px);
+        cursor: pointer;
         filter: brightness(0.6);
-        pointer-events: auto; // Only allow the click in the main to close the sidebar
 
         @include mq(md) {
             transform: translateX(-350px);
         }
     }
-    
-    .sticky-header {
-        position: sticky;
-        top: 0;
-        background: $white;
-        z-index: 50;
-        transition: transform 0.3s ease-in-out;
+}
 
-        &.fixed {
-            transform: translateY(-100%);
-        }
+.sticky-header {
+    transition: top 0.3s ease;
+    position: sticky;
+    top: -198px;
+    background-color: #fff;
+    z-index: 50;
+
+    @include mq(sm) {
+        top: -120px;
+    }
+
+    @include mq(md) {
+        top: -245px;
+    }
+
+    @include mq(lg) {
+        top: -227px;
+    }
+
+    &.fixed {
+        top: 0px;
+        box-shadow: 0 5px 35px rgba(0, 0, 0, .1);
     }
 }
 

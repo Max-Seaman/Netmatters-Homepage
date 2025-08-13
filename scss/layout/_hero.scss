@@ -49,6 +49,8 @@
     }
 }
 
+.slide
+
 //TEXT AND BUTTON ON IMAGE
 
 .hero__txt {
@@ -66,30 +68,35 @@
     h1 {
         @include font(40px, 600);
         color: $white;
+        margin: 0 0 20px;
 
-        @media (min-width: 992px) {
+        @include mq(md) {
             font-size: 4rem;
-            margin: 10px 0;
+            margin-bottom: 20px;
         }    
     }
 
     h2 {
         @include font(20px, 600);
         padding-bottom: 30px;
+        margin: 0 0 7px;
 
-        @media (min-width: 992px) {
+        @include mq(md) {
             @include size(750px, auto);
             font-size: px-to-rem(26);
             line-height: 1.5;
         }
     }
 
-    .smaller {
-        width: 575px;
-    }
+    
 }
 
 .hero__btn {
     font-size: 1.25rem;
     padding: 20px;
+    margin-bottom: 60px;
+
+    @include mq(xs) {
+        margin-bottom: 20px;
+    }
 }

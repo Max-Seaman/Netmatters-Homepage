@@ -16,3 +16,8 @@ function decline() {
     localStorage.setItem("cookies", "declined");
     $(".cookie-wrapper").css("display", "none");
 }
+
+// Manage consent button in the bottom left
+function showCookiesPopup() {
+    $(".cookie-wrapper").css("display", "flex");
+}
