@@ -1,9 +1,8 @@
 "use strict";
 
 var originalMenu = document.querySelector(".menu");
-var mainContent = document.querySelector("main");
+var mainContent = document.querySelector(".main-content");
 var imageline = document.querySelectorAll(".imageline");
-var cloneHeader = document.querySelector(".fixed-clone");
 
 function disablePointerEventsInside(container) {
   var allDescendants = container.querySelectorAll('*');
@@ -30,12 +29,7 @@ function menuAnimation(menu) {
       i.style.overflow = "hidden";
     }); // Disable pointer events
 
-    disablePointerEventsInside(mainContent);
-
-    if (cloneHeader) {
-      disablePointerEventsInside(cloneHeader);
-    } // Step 1: collapse top and bottom into center
-
+    disablePointerEventsInside(mainContent); // Step 1: collapse top and bottom into center
 
     menu.classList.add("collapse"); // Step 2: rotate center span
 
@@ -71,15 +65,17 @@ function menuAnimation(menu) {
       }); // Enable pointer events when sidebar is closed
 
       enablePointerEventsInside(mainContent);
-
-      if (cloneHeader) {
-        enablePointerEventsInside(cloneHeader);
-      }
     }, 500);
   }
 }
 
 originalMenu.addEventListener("click", function () {
   menuAnimation(originalMenu);
+});
+mainContent.addEventListener("click", function () {
+  if (originalMenu.classList.contains("open")) {
+    // Close the menu (simulate a click on the menu icon)
+    originalMenu.click();
+  }
 });
 //# sourceMappingURL=sidebar.dev.js.map

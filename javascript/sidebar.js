@@ -1,7 +1,6 @@
 const originalMenu = document.querySelector(".menu");
-const mainContent = document.querySelector("main");
+const mainContent = document.querySelector(".main-content");
 const imageline = document.querySelectorAll(".imageline");
-const cloneHeader = document.querySelector(".fixed-clone");
 
 
 function disablePointerEventsInside(container) {
@@ -32,9 +31,6 @@ function menuAnimation(menu) {
 
         // Disable pointer events
         disablePointerEventsInside(mainContent);
-        if (cloneHeader) {
-            disablePointerEventsInside(cloneHeader);
-        }
 
         // Step 1: collapse top and bottom into center
         menu.classList.add("collapse");
@@ -81,13 +77,18 @@ function menuAnimation(menu) {
 
             // Enable pointer events when sidebar is closed
             enablePointerEventsInside(mainContent);
-            if (cloneHeader) {
-                enablePointerEventsInside(cloneHeader);
-            }
+            
         }, 500);
     }
 }
 
 originalMenu.addEventListener("click", () => {
     menuAnimation(originalMenu);
+});
+
+mainContent.addEventListener("click", () => {
+    if (originalMenu.classList.contains("open")) {
+        // Close the menu (simulate a click on the menu icon)
+        originalMenu.click();
+    }
 });

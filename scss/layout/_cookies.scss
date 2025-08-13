@@ -1,0 +1,68 @@
+.cookie-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size(100%, 100%);
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+
+    .cookies {
+        @include size(90%, fit-content);
+        margin: auto;
+        background-color: $white;
+        border-radius: 5px;
+
+        @include mq(md) {
+            width: 600px;
+        }
+
+        h1 {
+            @include spacing(20px, 0px);
+            font-size: px-to-rem(28);
+            border-bottom: 1px solid $lightgrey;
+            font-weight: 400;
+        }
+
+        p {
+            @include spacing(20px 20px 45px, 0px);
+            line-height: 2;
+            border-bottom: 1px solid $lightgrey;
+            color: #6f757a;
+
+            .privacy {
+                cursor: pointer;
+                color: $black;
+
+                &:hover {
+                    text-decoration: underline
+                }
+            }
+        }
+    }
+}
+
+.cookie-buttons {
+    @include flex(column, center, center);
+    gap: 20px;
+    padding: 20px;
+
+    @include mq(sm) {
+        flex-direction: row;
+    }
+
+    button {
+        padding: 15px;
+        width: 100%;
+        color: $white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        @include mq(sm) {
+            width: 250px;
+        }
+    }
+}

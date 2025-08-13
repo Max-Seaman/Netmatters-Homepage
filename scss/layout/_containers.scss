@@ -1,15 +1,15 @@
 html, body {
     margin: 0 auto;
-    overflow-x: hidden;
     letter-spacing: 0.4px;
 }
 
-main {
+.main-content {
     position: relative;
-    transition: transform 0.5s ease , filter 0.3s ease;
     background-color: $white;
     z-index: 10;
-
+    transition: all 0.5s ease;
+    overflow: hidden;
+    
     &.sidebar-open {
         transform: translateX(-275px);
         filter: brightness(0.6);
@@ -17,6 +17,18 @@ main {
 
         @include mq(md) {
             transform: translateX(-350px);
+        }
+    }
+    
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        background: $white;
+        z-index: 50;
+        transition: transform 0.3s ease-in-out;
+
+        &.fixed {
+            transform: translateY(-100%);
         }
     }
 }
@@ -124,36 +136,5 @@ main {
     .about .container {
         flex-direction: row;
         column-gap: 40px;
-    }
-}
-
-//STICKY HEADER
-.sticky-header {
-    &.fixed-clone {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 9999;
-        background-color: $white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.5s ease;
-        transform: translateY(0);
-        pointer-events: auto;
-
-        &.sidebar-open {
-            transform: translateX(-275px);
-            filter: brightness(0.6);
-            pointer-events: none; // Only allow the click in the main to close the sidebar
-
-            @include mq(md) {
-                transform: translateX(-350px);
-            }
-        }
-    }
-
-    &.hidden {
-        transform: translateY(-100%);
-        pointer-events: none;
     }
 }

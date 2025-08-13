@@ -2,7 +2,7 @@
 
 .header__top {
     @include grid(minmax(100px, 400px) 1fr, 20px 0, center);
-    @include size(100%, 80px);
+    @include size(100%, auto);
     align-items: center;
     font-size: 1.5rem;
     margin: 20px 0;
@@ -119,7 +119,7 @@
     }
 }
 
-.contact, .btn-search {
+.contact, .btn-search, .slate {
     background-color: $button--grey;
 
     &:hover {
