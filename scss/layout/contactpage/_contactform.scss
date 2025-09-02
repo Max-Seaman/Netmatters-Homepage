@@ -1,0 +1,41 @@
+// General layout
+.contactinfo, .input {
+    @include flex(column);
+}
+
+.checkbox, .submit {
+    display: flex;
+}
+
+// Form
+.contactform {
+    background-color: #e6e7e9;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    color: $primary--background;
+
+    label {
+        font-weight: 600;
+    }
+
+    .checkbox {
+        a {
+            color: $primary--background;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+    }
+}
+
+
+// accordion
+.dropbox {
+    max-height: 0;            
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+}
+
+.dropbox.open {
+    max-height: 220px;    
+}
