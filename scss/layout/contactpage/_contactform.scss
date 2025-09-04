@@ -1,5 +1,5 @@
 // General layout
-.contactinfo, .input {
+.contactinfo, .input-control {
     @include flex(column);
 }
 
@@ -8,7 +8,7 @@
 }
 
 // Form
-.contactform {
+#contactform {
     background-color: #e6e7e9;
     padding: 30px;
     border-radius: 10px;
@@ -17,6 +17,17 @@
 
     label {
         font-weight: 600;
+    }
+
+    .input-control {
+        //STYLES FOR THE CONTENT/ DISPLAYS USING JAVASCRIPT
+        &.success input, &.success textarea {
+            border: 3px solid #09c372;
+        }
+
+        &.error input, &.error textarea {
+            border: 3px solid red;
+        }
     }
 
     .checkbox {

@@ -1691,7 +1691,7 @@ footer .footer__row .footer__menu h4 {
   }
 }
 
-.contactinfo, .input {
+.contactinfo, .input-control {
   display: flex;
   flex-direction: column;
 }
@@ -1700,17 +1700,23 @@ footer .footer__row .footer__menu h4 {
   display: flex;
 }
 
-.contactform {
+#contactform {
   background-color: #e6e7e9;
   padding: 30px;
   border-radius: 10px;
   margin-bottom: 50px;
   color: #333645;
 }
-.contactform label {
+#contactform label {
   font-weight: 600;
 }
-.contactform .checkbox a {
+#contactform .input-control.success input, #contactform .input-control.success textarea {
+  border: 3px solid #09c372;
+}
+#contactform .input-control.error input, #contactform .input-control.error textarea {
+  border: 3px solid red;
+}
+#contactform .checkbox a {
   color: #333645;
   text-decoration: underline;
   font-weight: 600;

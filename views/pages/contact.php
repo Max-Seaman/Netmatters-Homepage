@@ -81,26 +81,26 @@ require 'views/layout/header.php';
                         <p>To log a critical task, you will need to call our main line number and select Option 2 to leave an Out of Hours  voicemail. A technician will contact you on the number provided within 45 minutes of your call.</p>
                     </div>
                 </div>
-                <form method="POST" class="contactform">
+                <form method="POST" id="contactform">
                     <div>
-                        <div class="input">
+                        <div class="input-control">
                             <label for="name" class="required">Your Name</label>
                             <input name="name" id="name">
                         </div>
-                        <div class="input">
+                        <div class="input-control">
                             <label for="company">Company Name</label>
-                            <input name="company_name" id="company">
+                            <input name="company" id="company">
                         </div>
-                        <div class="input">
+                        <div class="input-control">
                             <label for="email" class="required">Your Email</label>
                             <input name="email" id="email">
                         </div>
-                        <div class="input">
+                        <div class="input-control">
                             <label for="phone" class="required">Your Telephone Number</label>
                             <input name="phone" id="phone">
                         </div>
                     </div>
-                    <div class="input">
+                    <div class="input-control">
                         <label for="message" class="required">Message</label>
                         <textarea name="message" id="message"></textarea>
                     </div>
@@ -134,5 +134,6 @@ require 'views/layout/header.php';
         <script src="javascript/sidebar.js"></script>
         <script src="javascript/stickyheader.js"></script>
         <script src="javascript/accordion.js"></script>
+        <script src="javascript/validate.js"></script>
     </body>
 </html>
