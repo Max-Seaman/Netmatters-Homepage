@@ -1,0 +1,91 @@
+.locations {
+    @include flex(column);
+    gap: 60px;
+    margin: 30px 0;
+
+    @include mq(md) {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .card {
+        padding: 0;
+        border-radius: 20px 20px 0 0;
+
+        img {
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .info {
+            @include flex(column);
+            text-align: left;
+            padding: 30px;
+            width: 100%;
+
+            .header {
+                display: block;
+                margin-bottom: 10px;
+                color: $primary--background;
+                font-size: px-to-rem(20);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .phonenumbers {
+                font-weight: 700;
+            }
+
+            p {
+                color: #666;
+                font-size: px-to-rem(13);
+                padding: 0;
+                margin-bottom: 10px;
+                line-height: 1.375rem;
+            }
+
+            .btn {
+                align-self: flex-start;
+                font-size: px-to-rem(14);
+                padding: 13px 32px;
+            }
+        }
+    }
+}
+
+.phonenumbers, .emails {
+    color: $primary--purple;
+    margin-bottom: 10px;
+    font-size: px-to-rem(26);
+    font-weight: 600;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.office-heading {
+    background-color: $primary--background;
+    width: 100vw;
+    margin-bottom: 60px;
+    padding: 0 8px;
+
+    @include mq(md) {
+        background-color: transparent;
+        margin: 18px 0 13px 0;
+    }
+    
+    h1{
+        color: $white;
+        font-size: 2.25rem;
+        align-self: flex-start;
+        font-weight: 400;
+        margin: 20px 0;
+
+        @include mq(md) {
+            color: $primary--background;
+        }
+    }
+}

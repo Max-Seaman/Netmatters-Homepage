@@ -1,0 +1,209 @@
+// General layout
+.contactinfo, .input-control {
+    @include flex(column);
+}
+
+.methods {
+    p {
+        color: $primary--background;
+        font-weight: 600;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+
+    #droplink:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    // accordion
+    .dropbox {
+        max-height: 0;            
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:first-child, p:last-child {
+            font-weight: 400;
+            color: #696f6e
+        }
+    }
+}
+
+@include mq(md) {
+    .input-group {
+        @include flex(row);
+        gap: 15px 30px;
+        flex-wrap: wrap;
+    }
+}
+
+@include mq(lg) {
+    .contactinfo {
+        flex-direction: row-reverse;
+        gap: 30px;
+
+        .methods {
+            flex: 1;
+
+            p:last-child {
+                margin-bottom: 80px;
+            }
+        }
+    }
+
+    #contactform {
+        align-self: flex-start;
+        flex: 2;
+    }
+}
+
+.checkbox, .submit {
+    display: flex;
+}
+
+// Form
+#contactform {
+    background-color: #e6e7e9;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    color: $primary--background;
+
+    label {
+        font-weight: 600;
+        margin-bottom: 5px;
+
+        &.required:after {
+            content: " *";
+            color: #d24d57;
+        }
+    }
+
+    .input-control {
+
+        input, textarea {
+            padding: 5px 15px;
+            border-color: #ccc;
+            border-style: none;
+
+            &:focus {
+                outline: 1px solid $searchfocus;
+                border-color: $searchfocus;
+                box-shadow: 0 0 5px 3px rgba(91, 191, 222, 0.2);
+            }
+        }
+
+        input {
+            height: 47px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            margin-bottom: 20px;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        &.resize {
+            @include mq(md) {
+                flex: 1 1 calc(50% - 30px);
+            }
+        }
+
+        //STYLES FOR THE CONTENT/ DISPLAYS USING JAVASCRIPT
+
+        &.error input, &.error textarea {
+            border: 1px solid #d24d57;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .checkbox {
+        gap: 20px;
+        margin-bottom: 15px;
+
+        label {
+            line-height: 32px;
+        }
+
+        input {
+            -webkit-appearance: none; /* Safari/Chrome */
+            -moz-appearance: none;  /* Firefox */
+            appearance: none;       /* Standard */
+
+            flex: 0 0 auto;
+            @include size(32px, 32px);
+            background-color: #e6e7e9;
+            border: 3px solid $primary--background;
+            border-radius: 3px;
+
+            &:checked {
+                background-color: $primary--background;
+
+                &::after {
+                    content: "\2713"; // ✔ tick mark (Unicode U+2713)
+                    display: block;
+                    font-size: 24px;
+                    color: $white;
+                    line-height: 1;
+                    padding: 1px 0 0 5px;
+                }
+            }
+        }
+
+        a {
+            color: $primary--background;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+    }
+
+    .submit {
+        @include flex(null, null, space-between);
+
+        .btn {
+            padding: 9px 12px;
+        }
+
+        p {
+            text-align: right;
+
+            span{
+                color: #d24d57;
+            }
+        }
+    }
+}
+
+// Success & error message
+.form-success, .form-errors {
+    @include flex(null, nul, space-between);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 20px 10px;
+    color: $white;
+
+    p {
+        margin: 0;
+        font-weight: 600;
+    }
+}
+
+.form-success {
+    background-color: #2ecc71
+}
+
+.form-errors {
+    background-color: #d24d57;
+}
+
+.closemessage {
+    cursor: pointer;
+}

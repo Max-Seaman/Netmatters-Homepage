@@ -1,0 +1,30 @@
+.current-page {
+    display: none;
+
+    @include mq(sm) {
+        display: block;
+        border-top: 1px solid $primary--background;
+    }
+
+    @include mq(md) {
+        box-shadow: 0 5px 35px rgba(0, 0, 0, .1);
+    }
+
+    .container {
+        align-items: flex-start;
+        
+        p {
+            font-size: px-to-rem(13);
+            color: $primary--background;
+        }
+
+        a {
+            color: $black;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -33,7 +33,7 @@
     @include flex(null, null, flex-end);
     gap: 20px;
 
-    button {
+    a {
         padding: 0 0 9px 16px;
         font-size: px-to-rem(18);
         border: none;
@@ -154,7 +154,7 @@
             padding: 11px 19px 6px;
             font-size: px-to-rem(25);
             border-radius: 0 4px 4px 0;
-            
+            border: none;
 
             @include mq(md) {
                 border-radius: 4px;
