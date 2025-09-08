@@ -1,84 +1,52 @@
-const form = document.getElementById('contactform');
+function validateFormJS() {
+    const form = document.getElementById('contactform');
+    if (!form) return false;
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    
-    const form = event.target;
-    const requiredFields = [
-        'name',
-        'email',
-        'phone',
-        'message',
-    ]
     let isValid = true;
+    const requiredFields = ['name', 'email', 'phone', 'message'];
 
-    // Clear previous states
+    // Clear previous error states
     form.querySelectorAll('.input-control').forEach(control => {
-        control.classList.remove('error', 'success');
+        control.classList.remove('error');
     });
-      
-    // Validation for each field in the array
-    for (let fieldName of requiredFields) {
+
+    // Validate required fields
+    requiredFields.forEach(fieldName => {
         const input = form.elements[fieldName];
         const value = input.value.trim();
 
         if (value === '') {
             setError(input);
             isValid = false;
-        } else {
-            setSuccess(input);
         }
 
-        if (fieldName === 'email') {
+        if (fieldName === 'email' && value !== '') {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (value !== '' && !emailRegex.test(value)) {
+            if (!emailRegex.test(value)) {
                 setError(input);
                 isValid = false;
             }
         }
-    }
 
-    // Separate validation for the phone number as its not a required field
-    const phoneInput = document.getElementById('phone');
-    const phoneValue = telephoneInput.value.trim();
-    const phoneRegex = /^\+?\d(?:\d|\s){6,15}$/;
-    if (phoneValue === '') {
-        // If field is cleared, remove both error and success classes
-        const inputControl = phoneInput.parentElement;
-        inputControl.classList.remove('error', 'success');
-    } else if (!phoneRegex.test(phoneValue)) {
-        setError(phoneInput);
-        isValid = false;
-    } else {
-        setSuccess(phoneInput);
-    }
-
-    // Alert message when everything is correct
-    if (isValid) {
-        alert('Form submitted successfully!');
-        // will add form.submit() here when needed 
-
-        // Reset the form fields
-        form.reset();
-
-        // Remove success classes
-        const inputControls = form.querySelectorAll('.input-control');
-        for (const control of inputControls) {
-            control.classList.remove('success');
+        if (fieldName === 'phone' && value !== '') {
+            const phoneRegex = /^\+?\d(?:\d|\s){6,15}$/;
+            if (!phoneRegex.test(value)) {
+                setError(input);
+                isValid = false;
+            }
         }
+    });
+
+    // Optional company field
+    const companyInput = form.elements['company'];
+    if (companyInput) {
+        companyInput.closest('.input-control').classList.remove('error');
     }
 
-});
-
-// Functions for the error and success messages
-function setError(input) {
-    const inputControl = input.parentElement;
-    inputControl.classList.remove('success');
-    inputControl.classList.add('error');
+    return isValid; // crucial for onsubmit
 }
 
-function setSuccess(input) {
-    const inputControl = input.parentElement;
-    inputControl.classList.remove('error');
-    inputControl.classList.add('success');
+function setError(input) {
+    const inputControl = input.closest('.input-control');
+    if (inputControl) inputControl.classList.add('error');
 }

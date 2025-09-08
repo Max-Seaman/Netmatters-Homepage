@@ -66,14 +66,14 @@ require 'views/layout/header.php';
                 </div>
             </div>
             <div class="contactinfo">
-                <div>
+                <div class="methods">
                     <p>Email us on:</p>
                     <a href="#" class="emails">sales@netmatters.com</a>
                     <p>Speak to Sales on:</p>
                     <a href="#" class="phonenumbers">01603 515007</a>
                     <p>Business hours:</p>
                     <p>Monday - Friday 07:00 - 18:00</p>
-                    <p id="droplink">Out of Hours IT Support <span class="icon-keyboard_arrow_down"></span></p>
+                    <p id="droplink">Out of Hours IT Support <span class="icon-down"></span></p>
                     <div class="dropbox">
                         <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.</p>
                         <p>Monday - Friday 18:00 - 22:00 Saturday 08:00 - 16:00<br>
@@ -81,40 +81,104 @@ require 'views/layout/header.php';
                         <p>To log a critical task, you will need to call our main line number and select Option 2 to leave an Out of Hours  voicemail. A technician will contact you on the number provided within 45 minutes of your call.</p>
                     </div>
                 </div>
-                <form method="POST" id="contactform">
-                    <div>
+                    <form method="POST" id="contactform" novalidate onsubmit="return validateFormJS()">
+                        <?php
+                        // Include DB connection and form functions
+                        require_once __DIR__ . '/../dbconnect.php';
+
+                        $sent = false;
+                        $errors = [];
+                        $input = [];
+
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                            $validation = validateForm($_POST);
+
+                            // Additional message length check
+                            if (isset($_POST['message']) && strlen(trim($_POST['message'])) < 5) {
+                                $validation['valid'] = false;
+                                $validation['errors']['message'] = "Message must be at least 5 characters long.";
+                            }
+
+                            if ($validation['valid']) {
+                                $data = $validation['sanitized'];
+
+                                if (storeContactForm(
+                                    $data['name'],
+                                    $data['company'],
+                                    $data['email'],
+                                    $data['phone'],
+                                    $data['message'],
+                                    $data['marketing']
+                                )) {
+                                    $sent = true;
+                                    $input = []; // clear form on success
+                                } else {
+                                    $errors[] = "Database insert failed. Please try again later.";
+                                    $input = $_POST;
+                                }
+                            } else {
+                                $errors = $validation['errors'];
+                                $input = $_POST; // preserve inputs
+                            }
+                        }
+                        ?>
+
+                        <!-- Display success message -->
+                        <?php if ($sent): ?>
+                            <div class="form-success">
+                                <p>Your message has been sent!</p>
+                                <div class="closemessage">&times;</div>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Display errors -->
+                        <?php if (!empty($errors)): ?>
+                            <div class="form-errors">
+                                <?php foreach ($errors as $err): ?>
+                                    <p><?= htmlspecialchars($err) ?></p>
+                                    <div class="closemessage">&times;</div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="input-group">
+                            <div class="input-control resize">
+                                <label for="name" class="required">Your Name</label>
+                                <input name="name" id="name" value="<?= htmlspecialchars($input['name'] ?? '') ?>" required>
+                            </div>
+                            <div class="input-control resize">
+                                <label for="company">Company Name</label>
+                                <input name="company" id="company" value="<?= htmlspecialchars($input['company'] ?? '') ?>">
+                            </div>
+                            <div class="input-control resize">
+                                <label for="email" class="required">Your Email</label>
+                                <input name="email" id="email" type="email" value="<?= htmlspecialchars($input['email'] ?? '') ?>" required>
+                            </div>
+                            <div class="input-control resize">
+                                <label for="phone" class="required">Your Telephone Number</label>
+                                <input name="phone" id="phone" value="<?= htmlspecialchars($input['phone'] ?? '') ?>" required>
+                            </div>
+                        </div>
+
                         <div class="input-control">
-                            <label for="name" class="required">Your Name</label>
-                            <input name="name" id="name">
+                            <label for="message" class="required">Message</label>
+                            <textarea name="message" id="message" required><?= htmlspecialchars($input['message'] ?? '') ?></textarea>
                         </div>
-                        <div class="input-control">
-                            <label for="company">Company Name</label>
-                            <input name="company" id="company">
+
+                        <div class="checkbox">
+                            <input name="marketing" type="checkbox" id="marketing-txt" <?= isset($input['marketing']) ? 'checked' : '' ?>>
+                            <label for="marketing-txt">
+                                Please tick this box if you wish to receive marketing information from us. Please see our 
+                                <a href="#">Privacy Policy</a> for more information on how we keep your data safe.
+                            </label>              
                         </div>
-                        <div class="input-control">
-                            <label for="email" class="required">Your Email</label>
-                            <input name="email" id="email">
+
+                        <div class="submit">
+                            <button type="submit" class="btn btn-8 hover-btn-8">Send Enquiry</button>
+                            <p><span>*</span> Fields Required</p>
                         </div>
-                        <div class="input-control">
-                            <label for="phone" class="required">Your Telephone Number</label>
-                            <input name="phone" id="phone">
-                        </div>
-                    </div>
-                    <div class="input-control">
-                        <label for="message" class="required">Message</label>
-                        <textarea name="message" id="message"></textarea>
-                    </div>
-                    <div class="checkbox">
-                        <div class="box">
-                            <input name="marketing" type="checkbox" id="marketing-txt">
-                        </div>
-                        <label for="marketing-txt">Please tick this box if you wish to receive marketing information from us. Please see our <a href="#">Privacy Policy</a> for more information on how we keep your data safe.</label>              
-                    </div>
-                    <div class="submit">
-                        <button type="submit" class="btn btn-8 hover-btn-8">Send Enquiry</button>
-                        <p>* Fields Required</p>
-                    </div>
-                </form>
+                    </form>
+
             </div>
         </div>
 
@@ -135,5 +199,6 @@ require 'views/layout/header.php';
         <script src="javascript/stickyheader.js"></script>
         <script src="javascript/accordion.js"></script>
         <script src="javascript/validate.js"></script>
+        <script src="javascript/messageremove.js"></script>
     </body>
 </html>

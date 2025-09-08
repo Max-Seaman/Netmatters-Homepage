@@ -199,72 +199,40 @@ require 'views/layout/header.php';
                     <a href="#" class="view view--right">View All <i class="icon icon-arrow"></i></a>
                 </div>
                 <div class="container container__news--mq">
-                    <div class="container container__news">
-                        <a href="#" class="news-txt">
-                            <div class="container container__image">
-                                <img src="img/news-value.png" alt="Increase exit value with bespoke software">
-                                <p class="tag tag--insights">Insights</p>
-                            </div>
-                            <div class="content content--insights">
-                                <h3>How Much Could Bespoke Software Add to Your E...</h3>
-                                <p>If you're a Managing Director or Senior Manager preparing your business for exit, you know that incr...</p>
-                                <span class="btn btn-1 btn__news">Read More</span>
-                                <div class="news-author">
-                                    <div class="avatar">
-                                        <img src="img/news-netmatters.png" alt="Author Image">
-                                    </div>
-                                    <div class="details">
-                                        <p class="bold">Posted by Netmatters</p>
-                                        <p>27th June 2025</p>
+                     
+                    <!-- PHP to fetch news from database and display dynamically -->
+                    <?php 
+                    
+                    require 'views/dbconnect.php';
+                    
+                    $articles = getNews(); // Fetch news articles from the database
+                    $i = 0; foreach($articles as $article): $i++; 
+                    
+                    ?> 
+                        <div class="container container__news <?php if ($i===3) { echo"news--hidden"; } ?>">
+                            <a href="#" class="news-txt">
+                                <div class="container container__image">
+                                    <img src="img/<?= $article["image"] ?>" alt="News Article Thumbnail">
+                                    <p class="tag tag--<?= $article["type"] ?>"><?= $article["type"] ?></p>
+                                </div>
+                                <div class="content content--<?= $article["type"] ?>">
+                                    <h3><?= $article["title"] ?></h3>
+                                    <p><?= $article["description"] ?></p>
+                                    <span class="btn btn-<?= $article["button"] ?> btn__news">Read More</span>
+                                    <div class="news-author">
+                                        <div class="avatar">
+                                            <img src="img/<?= $article["author-image"] ?>" alt="Author Image">
+                                        </div>
+                                        <div class="details">
+                                            <p class="bold">Posted by <?= $article["author"] ?></p>
+                                            <p><?= date("jS F Y", strtotime($article["date"])) ?></p> <!-- had to look this up to find a way to get rid of the excess at the end of the date -->
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="container container__news">
-                        <a href="#" class="news-txt">
-                            <div class="container container__image">
-                                <img src="img/news-ai.png" alt="Article: AI integration for business">
-                                <p class="tag tag--insights">Insights</p>
-                            </div>
-                            <div class="content content--insights">
-                                <h3>How Can AI Benefit My Business?</h3>
-                                <p>The idea of integrating AI into business operations may seem daunting, but there are undeniable...</p>
-                                <span class="btn btn-1 btn__news">Read More</span>
-                                <div class="news-author">
-                                    <div class="avatar">
-                                        <img src="img/news-netmatters.png" alt="Author Image">
-                                    </div>
-                                    <div class="details">
-                                        <p class="bold">Posted by Netmatters</p>
-                                        <p>26th June 2025</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="container container__news news--hidden">
-                        <a href="#" class="news-txt">
-                            <div class="container container__image">
-                                <img src="img/news-hire.png" alt="Netmatters hiring 1st line technician">
-                                <p class="tag tag--careers">Careers</p>
-                            </div>
-                            <div class="content content--careers">
-                                <h3>1st Line Technician</h3>
-                                <p>Salary Range &pound;25,000 - &pound;29,000 + Pension Hours 40 hours per week, Monday - Friday Location Wymondham...</p>
-                                <span class="btn btn-2 btn__news">Read More</span>
-                                <div class="news-author">
-                                    <div class="avatar">
-                                        <img src="img/news-BS.png" alt="Author Image">
-                                    </div>
-                                    <div class="details">
-                                        <p class="bold">Posted by Bethany Shakespeare</p>
-                                        <p>20th June 2025</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+
                 </div>
                 <a href="#" class="view view--last">View All <i class="icon icon-arrow"></i></a>
             </div>

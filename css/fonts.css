@@ -108,6 +108,9 @@
 .icon-shuffle:before {
   content: "\f074";
 }
+.icon-down:before {
+  content: "\f078";
+}
 .icon-phone-square:before {
   content: "\f098";
 }
@@ -167,6 +170,9 @@
 }
 .icon-consultancy:before {
   content: "\e904";
+}
+.icon-checkmark:before {
+  content: "\e914";
 }
 .icon-plane:before {
   content: "\e911";
