@@ -184,7 +184,7 @@
 
 // Success & error message
 .form-success, .form-errors {
-    @include flex(null, nul, space-between);
+    @include flex(null, null, space-between);
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 20px 10px;

@@ -133,12 +133,12 @@ require 'views/layout/header.php';
 
                         <!-- Display errors -->
                         <?php if (!empty($errors)): ?>
-                            <div class="form-errors">
-                                <?php foreach ($errors as $err): ?>
+                            <?php foreach ($errors as $err): ?>
+                                <div class="form-errors">
                                     <p><?= htmlspecialchars($err) ?></p>
                                     <div class="closemessage">&times;</div>
-                                <?php endforeach; ?>
-                            </div>
+                                </div>
+                            <?php endforeach; ?>
                         <?php endif; ?>
 
                         <div class="input-group">
